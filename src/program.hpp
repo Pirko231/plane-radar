@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <optional>
 
+/// @brief tutaj znajduje sie cala logika gry
 class Program
 {
 public:

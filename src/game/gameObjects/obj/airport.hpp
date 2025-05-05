@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <iostream>
 #include "base.hpp"
+#include "flyable.hpp"
 
 class Airport : public sf::Drawable, public sf::Transformable
 {
@@ -18,4 +18,5 @@ private:
         target.draw(sprite, states);
     }
     sf::Sprite sprite;
+    std::vector<IFlyable*> planes;
 };

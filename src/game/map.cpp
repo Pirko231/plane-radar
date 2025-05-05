@@ -10,3 +10,9 @@ Map::~Map()
 {
     delete [] pixels;
 }
+
+sf::Vector2f Map::getRandomPoint() const
+{
+    sf::Vector2f pos{std::rand() % windowSize.x + 1.f, std::rand() % windowSize.y + 1.f};
+    return pos;
+}

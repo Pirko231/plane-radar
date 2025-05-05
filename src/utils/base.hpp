@@ -1,4 +1,5 @@
 #pragma once
+#include "assetLoader.hpp"
 
 /// @brief utilities, wystarczy includowac base.hpp
 namespace util

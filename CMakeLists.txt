@@ -41,8 +41,9 @@ add_executable(main
     src/program.cpp
     src/game/map.cpp
 
-    src/game/gameObjects/planes/plane.cpp
-    src/game/gameObjects/planes/helicopter.cpp
+    src/game/gameObjects/obj/plane.cpp
+    src/game/gameObjects/obj/helicopter.cpp
+    src/game/gameObjects/obj/airport.cpp
 )
 
 if(NOT MSVC)

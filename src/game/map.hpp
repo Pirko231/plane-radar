@@ -5,7 +5,7 @@
 class Map : public sf::Drawable
 {
 public:
-    Map(sf::Vector2u _windowSize);
+    Map(sf::Vector2u mapSize);
     ~Map();
 private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override

@@ -1,6 +1,7 @@
 #include "program.hpp"
 
 Program::Program()
+: map{{200u,200u}}, airportManager{10, &map}
 {
     window = new sf::RenderWindow;
     window->create(sf::VideoMode{{1280, 720}, 32}, sf::String{"Plane radar"} , sf::Style::Close | sf::Style::Titlebar);
@@ -21,10 +22,18 @@ void Program::handleEvents()
     
 }
 
-void Program::display()
-{
-}
-
 void Program::update()
 {
+    airportManager.update();
+}
+
+void Program::display()
+{
+    window->clear();
+
+
+    airportManager.display(window);
+
+
+    window->display();
 }

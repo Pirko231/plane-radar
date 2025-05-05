@@ -21,6 +21,7 @@ link_directories(${SFML_LIBRARY_DIR})
 include_directories(${CMAKE_SOURCE_DIR}/src/utils)
 include_directories(${CMAKE_SOURCE_DIR}/src/game/interfaces)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/game/gameObjects)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/game/gameObjects/obj)
 
 
 # Znalezienie (wersja 2.6.1)
@@ -39,7 +40,9 @@ file(COPY "${RESOURCES_DIR}" DESTINATION "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
 add_executable(main 
     src/main.cpp 
     src/program.cpp
+
     src/game/map.cpp
+    src/game/airportManager.cpp
 
     src/game/gameObjects/obj/plane.cpp
     src/game/gameObjects/obj/helicopter.cpp

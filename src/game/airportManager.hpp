@@ -1,11 +1,12 @@
 #pragma once
 #include "factories/airportFactory.hpp"
+#include "map.hpp"
 #include <vector>
 
 class AirportManager
 {
 public:
-    AirportManager(int amount);
+    AirportManager(int amount, const Map* map);
 
     void update();
 

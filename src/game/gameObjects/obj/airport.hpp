@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <iostream>
 #include "base.hpp"
 
 class Airport : public sf::Drawable, public sf::Transformable
@@ -9,6 +10,12 @@ public:
 
     void update();
 
+    sf::FloatRect getGlobalBounds() const {return sprite.getGlobalBounds();}
 private:
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const override
+    {
+        states.transform *= getTransform();
+        target.draw(sprite, states);
+    }
     sf::Sprite sprite;
 };

@@ -7,6 +7,8 @@ class Map : public sf::Drawable
 public:
     Map(sf::Vector2u mapSize);
     ~Map();
+
+    sf::Vector2f getRandomPoint() const {return {};}
 private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override
     {

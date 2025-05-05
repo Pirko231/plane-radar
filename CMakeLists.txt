@@ -18,11 +18,9 @@ set(SFML_LIBRARY_DIR "${SFML_ROOT}/lib")
 include_directories(${SFML_INCLUDE_DIR})
 link_directories(${SFML_LIBRARY_DIR})
 
-include_directories(${CMAKE_SOURCE_DIR}/src/perf)
 include_directories(${CMAKE_SOURCE_DIR}/src/utils)
 include_directories(${CMAKE_SOURCE_DIR}/src/game/interfaces)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/game/gameObjects)
-include_directories(${CMAKE_SOURCE_DIR}/src/game/playerUI)
 
 
 # Znalezienie (wersja 2.6.1)
@@ -42,6 +40,9 @@ add_executable(main
     src/main.cpp 
     src/program.cpp
     src/game/map.cpp
+
+    src/game/gameObjects/planes/plane.cpp
+    src/game/gameObjects/planes/helicopter.cpp
 )
 
 if(NOT MSVC)

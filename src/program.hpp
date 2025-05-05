@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <optional>
+#include "base.hpp"
 
 /// @brief tutaj znajduje sie cala logika gry
 class Program

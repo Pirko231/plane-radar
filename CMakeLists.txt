@@ -40,7 +40,8 @@ file(COPY "${RESOURCES_DIR}" DESTINATION "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
 # Tworzenie pliku wykonywalnego
 add_executable(main 
     src/main.cpp 
-    src/program.cpp 
+    src/program.cpp
+    src/game/map.cpp
 )
 
 if(NOT MSVC)

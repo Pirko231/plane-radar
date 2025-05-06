@@ -18,14 +18,17 @@ private:
     void manageView();
 
     sf::RenderWindow* window;
-    std::map<sf::Keyboard::Key, bool> keyPressed;
-    std::map<sf::Keyboard::Key, bool> keyReleased;
+    std::unordered_map<sf::Keyboard::Scan, bool> keyPressed;
+    std::unordered_map<sf::Keyboard::Scan, bool> keyReleased;
+    std::unordered_map<sf::Mouse::Button, bool> mButtonPressed;
+    std::unordered_map<sf::Mouse::Button, bool> mButtonReleased;
+    float scrolled{};
 
     sf::Vector2u mapSize{1280u,720u};
     sf::View view;
-    float moveViewSpeed{10.f};
+    float moveViewSpeed{100.f};
+    float zoomViewSpeed{1.f};
 
-    
     Map map;
     AirportManager airportManager;
 };

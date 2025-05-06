@@ -8,4 +8,8 @@ namespace util
     /// @brief aktualizowana w main.cpp
     inline float dt{};
 
+    struct KeyStatus
+    {
+        bool pressed{}, released{};
+    };
 };

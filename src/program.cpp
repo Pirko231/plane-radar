@@ -18,19 +18,21 @@ Program::~Program()
 
 void Program::handleEvents()
 {
-    keyPressed.clear();
-    keyReleased.clear();
-    mButtonPressed.clear();
-    mButtonReleased.clear();
+    //released dziala tylko na jedna klatke
+    for (auto& key : keys)
+        key.second.released = false;
     scrolled = 0.f;
     while (const std::optional ev = window->pollEvent())
     {
         if (ev->is<sf::Event::Closed>())
             window->close();
         if (const auto* keyP = ev->getIf<sf::Event::KeyPressed>())
-            keyPressed[keyP->scancode] = true;
+            keys[keyP->scancode].pressed = true;
         if (const auto* keyR = ev->getIf<sf::Event::KeyReleased>())
-            keyReleased[keyR->scancode] = true;
+        {
+            keys[keyR->scancode].pressed = false;
+            keys[keyR->scancode].released = true;
+        }
         if (const auto* mButtonP = ev->getIf<sf::Event::MouseButtonPressed>())
             mButtonPressed[mButtonP->button] = true;
         if (const auto* mButtonR = ev->getIf<sf::Event::MouseButtonReleased>())
@@ -63,13 +65,13 @@ void Program::manageView()
 {   
     //move the view
     sf::Vector2f moveView{};
-    if (keyPressed[sf::Keyboard::Scan::W])
+    if (keys[sf::Keyboard::Scan::W].pressed)
         moveView += {0.f,-1.f};
-    if (keyPressed[sf::Keyboard::Scan::S])
+    if (keys[sf::Keyboard::Scan::S].pressed)
         moveView += {0.f,1.f};
-    if (keyPressed[sf::Keyboard::Scan::A])
+    if (keys[sf::Keyboard::Scan::A].pressed)
         moveView += {-1.f,0.f};
-    if (keyPressed[sf::Keyboard::Scan::D])
+    if (keys[sf::Keyboard::Scan::D].pressed)
         moveView += {1.f,0.f};
     
     if (moveView != sf::Vector2f{})

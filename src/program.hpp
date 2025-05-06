@@ -18,8 +18,7 @@ private:
     void manageView();
 
     sf::RenderWindow* window;
-    std::unordered_map<sf::Keyboard::Scan, bool> keyPressed;
-    std::unordered_map<sf::Keyboard::Scan, bool> keyReleased;
+    std::unordered_map<sf::Keyboard::Scan, util::KeyStatus> keys;
     std::unordered_map<sf::Mouse::Button, bool> mButtonPressed;
     std::unordered_map<sf::Mouse::Button, bool> mButtonReleased;
     float scrolled{};

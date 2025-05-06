@@ -9,6 +9,8 @@ public:
     ~Map();
 
     sf::Vector2f getRandomPoint() const;
+
+    sf::Vector2f getCenter() const {return sprite.getGlobalBounds().getCenter();}
 private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override
     {

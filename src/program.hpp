@@ -25,7 +25,6 @@ private:
     sf::Vector2u mapSize{1280u,720u};
     sf::View view;
     float moveViewSpeed{100.f};
-    float zoomViewSpeed{1.f};
 
     Map map;
     AirportManager airportManager;

@@ -87,12 +87,10 @@ void Program::manageView()
     view.move(moveView);
 
     //zoom the view
-    /*float zoomView{};
-    if (scrolled > 0)
-        zoomView = zoomViewSpeed;
-    if (scrolled < 0)
-        zoomView = 1.f / zoomViewSpeed;
 
-    zoomView *= util::dt;
-    view.zoom(zoomView);*/
+    if (scrolled > 0)
+        view.zoom(0.9f);
+    if (scrolled < 0)
+        view.zoom(1.1f);
+    
 }

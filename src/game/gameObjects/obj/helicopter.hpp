@@ -5,8 +5,8 @@ class Helicopter : public IFlyable
 {
 public:
     Helicopter();
-    void update();
-    void setDestination();
+    void update() override;
+    void setDestination() override;
 private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override
     {

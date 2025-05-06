@@ -4,9 +4,10 @@
 class IFlyable : public sf::Drawable, public sf::Transformable
 {
 public:
+    IFlyable() = default;
     virtual void update() = 0;
     virtual void setDestination() = 0;
 
 protected:
-    void draw(sf::RenderTarget& target, sf::RenderStates states) const override = 0;
+    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const = 0;
 };

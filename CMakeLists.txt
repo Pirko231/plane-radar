@@ -43,6 +43,7 @@ add_executable(main
 
     src/game/map.cpp
     src/game/airportManager.cpp
+    src/game/flightControl.cpp
 
     src/game/gameObjects/obj/plane.cpp
     src/game/gameObjects/obj/helicopter.cpp

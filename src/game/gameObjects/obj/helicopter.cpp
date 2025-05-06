@@ -1,6 +1,6 @@
 #include "helicopter.hpp"
 
-Helicopter::Helicopter()
+Helicopter::Helicopter() : IFlyable{}
 {
 
 }

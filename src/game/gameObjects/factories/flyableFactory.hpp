@@ -1,6 +1,6 @@
 #pragma once
-#include "../planes/plane.hpp"
-#include "../planes/helicopter.hpp"
+#include "plane.hpp"
+#include "helicopter.hpp"
 #include <memory>
 
 class FlyableFactory
@@ -8,10 +8,10 @@ class FlyableFactory
 public:
     std::unique_ptr<IFlyable> createPlane()
     {
-        return std::make_unique<IFlyable>(Plane{});
+        return std::make_unique<Plane>();
     }
     std::unique_ptr<IFlyable> createHeli()
     {
-        return std::make_unique<IFlyable>(Helicopter{});
+        return std::make_unique<Helicopter>();
     }
 };

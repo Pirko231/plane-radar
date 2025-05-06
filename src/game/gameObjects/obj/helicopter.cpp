@@ -1,6 +1,7 @@
 #include "helicopter.hpp"
 
-Helicopter::Helicopter() : IFlyable{}
+Helicopter::Helicopter()
+: IFlyable{}, sprite{util::AssetLoader::get().airport}
 {
 
 }

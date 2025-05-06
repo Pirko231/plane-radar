@@ -1,9 +1,9 @@
 #pragma once
-#include "factories/airportFactory.hpp"
+#include "airportManagerInterface.hpp"
 #include "map.hpp"
 #include <vector>
 
-class AirportManager
+class AirportManager : public IAirportManager
 {
 public:
     AirportManager(int amount, const Map* map);
@@ -11,6 +11,10 @@ public:
     void update();
 
     void display(sf::RenderWindow* window);
+
+    const Airport& getClosestAirport(sf::Vector2f pos) const override;
+
+    bool requestLanding(IFlyable&, sf::Vector2f) override;
 
 private:
     std::vector<Airport> airports;

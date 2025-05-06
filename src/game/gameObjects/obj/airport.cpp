@@ -10,3 +10,9 @@ void Airport::update()
 {
     
 }
+
+bool Airport::requestLanding(IFlyable& obj)
+{
+    planes.push_back(&obj);
+    return true;
+}

@@ -11,6 +11,8 @@ public:
     void update();
 
     sf::FloatRect getGlobalBounds() const {return sprite.getGlobalBounds();}
+
+    bool requestLanding(IFlyable& obj);
 private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override
     {

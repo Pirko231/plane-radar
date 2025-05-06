@@ -1,10 +1,12 @@
 #pragma once
-#include "airportManager.hpp"
+#include "airportManagerInterface.hpp"
 #include "gameObjects/factories/flyableFactory.hpp"
 
 class FlightControl
 {
 public:
+    FlightControl(int startingPlanes, IAirportManager&);
+
 
 
 private:

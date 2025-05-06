@@ -20,3 +20,25 @@ void AirportManager::display(sf::RenderWindow* window)
     for (auto& port : airports)
         window->draw(port);
 }
+
+const Airport &AirportManager::getClosestAirport(sf::Vector2f pos) const
+{
+    if (!airports.empty())
+        return airports[0];
+    else
+        throw std::out_of_range{"lotniska sa puste"};
+
+}
+
+bool AirportManager::requestLanding(IFlyable& obj, sf::Vector2f pos)
+{
+    Airport* requestedAirport{};
+    for (auto& airport : airports)
+        if (airport.getGlobalBounds().contains(pos))
+            requestedAirport = &airport;
+
+    if (requestedAirport)
+        return requestedAirport->requestLanding(obj);
+
+    return false;
+}

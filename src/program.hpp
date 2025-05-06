@@ -19,8 +19,7 @@ private:
 
     sf::RenderWindow* window;
     std::unordered_map<sf::Keyboard::Scan, util::KeyStatus> keys;
-    std::unordered_map<sf::Mouse::Button, bool> mButtonPressed;
-    std::unordered_map<sf::Mouse::Button, bool> mButtonReleased;
+    std::unordered_map<sf::Mouse::Button, util::MouseStatus> mButtons;
     float scrolled{};
 
     sf::Vector2u mapSize{1280u,720u};

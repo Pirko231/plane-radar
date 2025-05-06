@@ -9,8 +9,19 @@ namespace util
     inline float dt{};
 
     /// @brief informacje o nacisnieciu / puszceniu klawisza
-    struct KeyStatus
+    struct DefaultStatus
     {
         bool pressed{}, released{};
     };
+    
+    struct KeyStatus : public DefaultStatus
+    {
+        
+    };
+
+    struct MouseStatus : public DefaultStatus
+    {
+
+    };
+
 };

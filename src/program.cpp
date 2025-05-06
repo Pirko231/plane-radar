@@ -21,6 +21,9 @@ void Program::handleEvents()
     //released dziala tylko na jedna klatke
     for (auto& key : keys)
         key.second.released = false;
+    for (auto& mButton : mButtons)
+        mButton.second.released = false;
+    
     scrolled = 0.f;
     while (const std::optional ev = window->pollEvent())
     {
@@ -34,9 +37,12 @@ void Program::handleEvents()
             keys[keyR->scancode].released = true;
         }
         if (const auto* mButtonP = ev->getIf<sf::Event::MouseButtonPressed>())
-            mButtonPressed[mButtonP->button] = true;
+            mButtons[mButtonP->button].pressed = true;
         if (const auto* mButtonR = ev->getIf<sf::Event::MouseButtonReleased>())
-            mButtonReleased[mButtonR->button] = true;
+        {
+            mButtons[mButtonR->button].pressed = true;
+            mButtons[mButtonR->button].released = true;
+        }
         if (const auto* mWheel = ev->getIf<sf::Event::MouseWheelScrolled>())
             scrolled = mWheel->delta;
     }

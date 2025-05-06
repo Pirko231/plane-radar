@@ -5,7 +5,7 @@
 class Helicopter : public IFlyable
 {
 public:
-    Helicopter();
+    Helicopter(sf::Vector2f pos);
     void update() override;
     void setDestination() override;
     sf::FloatRect getGlobalBounds() const override {return sprite.getGlobalBounds();}

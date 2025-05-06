@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <optional>
 #include "game/airportManager.hpp"
+#include "game/flightControl.hpp"
 #include <map>
 
 /// @brief tutaj znajduje sie cala logika gry
@@ -28,4 +29,5 @@ private:
 
     Map map;
     AirportManager airportManager;
+    FlightControl flightControl;
 };

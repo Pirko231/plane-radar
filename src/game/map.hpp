@@ -11,6 +11,8 @@ public:
     sf::Vector2f getRandomPoint() const;
 
     sf::Vector2f getCenter() const {return sprite.getGlobalBounds().getCenter();}
+
+    sf::FloatRect getGlobalBounds() const {return sprite.getGlobalBounds();}
 private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override
     {

@@ -1,7 +1,7 @@
 #include "program.hpp"
 
 Program::Program()
-: map{mapSize}, airportManager{4, &map}
+: map{mapSize}, airportManager{4, &map}, flightControl{(sf::Vector2u)map.getGlobalBounds().size, 10, airportManager}
 {
     window = new sf::RenderWindow;
     window->create(sf::VideoMode{mapSize, 32}, sf::String{"Plane radar"} , sf::Style::Close | sf::Style::Titlebar);
@@ -52,6 +52,7 @@ void Program::handleEvents()
 void Program::update()
 {
     airportManager.update();
+    flightControl.update();
 
     manageView();
 }
@@ -62,6 +63,7 @@ void Program::display()
     window->setView(view);
 
     airportManager.display(window);
+    flightControl.display(window);
 
     
     window->display();

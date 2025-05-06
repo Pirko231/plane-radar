@@ -5,7 +5,7 @@
 class Plane : public IFlyable
 {
 public:
-    Plane();
+    Plane(sf::Vector2f pos);
     void update() override;
     void setDestination() override;
     sf::FloatRect getGlobalBounds() const override {return sprite.getGlobalBounds();}

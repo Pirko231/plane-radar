@@ -5,9 +5,11 @@
 class FlightControl
 {
 public:
-    FlightControl(int startingPlanes, IAirportManager&);
+    FlightControl(sf::Vector2u mapSize, int startingPlanes, IAirportManager&);
 
+    void update() {}
 
+    void display(sf::RenderWindow*) {}
 
 private:
     std::vector<std::unique_ptr<IFlyable>> objects;

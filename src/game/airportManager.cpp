@@ -23,11 +23,20 @@ void AirportManager::display(sf::RenderWindow* window)
 
 const Airport &AirportManager::getClosestAirport(sf::Vector2f pos) const
 {
-    if (!airports.empty())
-        return airports[0];
-    else
-        throw std::out_of_range{"lotniska sa puste"};
+    sf::Vector2f minOffset{1.f,1.f};
+    const Airport* currentAirport{};
 
+    for (auto& airport : airports)
+    {
+        sf::Vector2f offset{};
+        offset = pos -airport.getGlobalBounds().position;
+        if (offset.length() > minOffset.length())
+        {
+            minOffset = offset;
+            currentAirport = &airport;
+        }
+    }
+    return *currentAirport;
 }
 
 bool AirportManager::requestLanding(IFlyable& obj, sf::Vector2f pos)

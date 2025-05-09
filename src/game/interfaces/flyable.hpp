@@ -16,6 +16,9 @@ public:
     virtual void update() = 0;
     virtual void setDestination() = 0;
     void refill() {fuel += refillSpeed;}
+    virtual void depart(sf::Vector2f target) = 0;
+
+    bool readyToDepart() const {return fuel >= fuelToDepart;}
 
     virtual sf::FloatRect getGlobalBounds() const {return sprite.getGlobalBounds();}
     Status getStatus() const {return status;}
@@ -29,5 +32,6 @@ protected:
     sf::Sprite sprite;
     Status status;
     float fuel{100.f};
+    float fuelToDepart{80.f};
     float refillSpeed{1.f};
 };

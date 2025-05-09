@@ -9,10 +9,20 @@ Plane::Plane(sf::Vector2f pos)
 
 void Plane::update()
 {
-
+    if (getPosition() - destination != sf::Vector2f{0.f,0.f})
+    {
+        move({(getPosition() - destination).normalized()});
+        setRotation((getPosition() - destination).angle());
+    }
 }
 
 void Plane::setDestination()
 {
 
+}
+
+void Plane::depart(sf::Vector2f target)
+{
+    status = Status::FLYING;
+    destination = target;
 }

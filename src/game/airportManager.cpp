@@ -12,7 +12,10 @@ AirportManager::AirportManager(int amount, const Map* map)
 void AirportManager::update()
 {
     for (auto& port : airports)
+    {
         port.update();
+        port.departReadyPlanes([&](){return airports[std::rand() % airports.size()].getPosition();});
+    }
 }
 
 void AirportManager::display(sf::RenderWindow* window)

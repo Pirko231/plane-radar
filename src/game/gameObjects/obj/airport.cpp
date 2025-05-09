@@ -14,6 +14,13 @@ void Airport::update()
         plane->refill();
 }
 
+void Airport::departReadyPlanes(std::function<sf::Vector2f()> where)
+{
+    for (auto& plane : objects)
+        if (plane->readyToDepart())
+            plane->depart(where());
+}
+
 bool Airport::requestLanding(IFlyable& obj)
 {
     objects.push_back(&obj);

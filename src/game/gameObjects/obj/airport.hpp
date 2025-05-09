@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <functional>
 #include "base.hpp"
 #include "flyable.hpp"
 
@@ -9,6 +10,10 @@ public:
     Airport(sf::Vector2f pos);
 
     void update();
+
+    /// @brief startuje samoloty do okreslonej pozycji 
+    /// @param where funkcja ktora zwraca losowa pozycje lotniska
+    void departReadyPlanes(std::function<sf::Vector2f()> where);
 
     sf::FloatRect getGlobalBounds() const {return sprite.getGlobalBounds();}
 

@@ -20,9 +20,9 @@ void Airport::departReadyPlanes(std::function<IAirport*()> where)
         if ((*plane)->readyToDepart())
         {
             IAirport* destination {where()};
-            do
+            while (destination == this)
                 destination = where();
-            while (destination == this);
+            
 
             (*plane)->depart(destination);
             if (plane == objects.end() - 1)

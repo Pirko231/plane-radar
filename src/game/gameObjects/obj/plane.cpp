@@ -24,13 +24,14 @@ void Plane::depart(IAirport* _target)
     status = Status::FLYING;
     target = _target;
     destination = _target->getPosition();
-    moveBy = (getPosition() - destination).normalized();
+    if (getPosition() - destination != sf::Vector2f{})
+        moveBy = (getPosition() - destination).normalized();
 }
 
 bool Plane::isNearTarget() const
 {
-    if (std::abs(getPosition().x - destination.x) < 4.f && std::abs(getPosition().y - destination.y) < 4.f  && status == Status::FLYING)
+    if (std::abs(getPosition().x - destination.x) < 20.f && std::abs(getPosition().y - destination.y) < 20.f  && status == Status::FLYING)
         return true;
 
-    return false;
+    return true;
 }

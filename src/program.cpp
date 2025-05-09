@@ -64,13 +64,15 @@ void Program::update()
 #ifdef IMGUI
     ImGui::SFML::Update(*window, sf::seconds(util::dt));
     ImGui::Begin("Debug tools");
+    if (ImGui::Button("Pause"))
+        paused = !paused;
     ImGui::End();
 #endif
 
-    airportManager.update();
-    flightControl.update();
-
     manageView();
+
+    airportManager.update(paused);
+    flightControl.update(paused);
 }
 
 void Program::display()

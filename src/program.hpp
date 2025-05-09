@@ -33,6 +33,7 @@ private:
     sf::View view;
     float moveViewSpeed{100.f};
 
+    bool paused{};
     Map map;
     AirportManager airportManager;
     FlightControl flightControl;

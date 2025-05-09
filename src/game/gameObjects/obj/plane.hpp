@@ -10,7 +10,7 @@ public:
     void update() override;
     void depart(IAirport* target) override;
     bool isNearTarget() const override;
-    void land() override {status = Status::DOCKED; destination = getPosition();}
+    void land() override {status = Status::DOCKED; destination = getPosition(); moveBy = {};}
 
 #ifdef IMGUI
     sf::Vector2f getDestination() const {return destination;}

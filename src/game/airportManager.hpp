@@ -8,7 +8,7 @@ class AirportManager : public IAirportManager
 public:
     AirportManager(int amount, const Map* map);
 
-    void update();
+    void update(bool paused = false);
 
     void display(sf::RenderWindow* window);
 

@@ -7,7 +7,7 @@ class FlightControl
 public:
     FlightControl(sf::Vector2u mapSize, int startingPlanes, IAirportManager&);
 
-    void update();
+    void update(bool paused = false);
 
     void display(sf::RenderWindow*);
 

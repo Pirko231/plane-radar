@@ -9,12 +9,16 @@ AirportManager::AirportManager(int amount, const Map* map)
     }
 }
 
-void AirportManager::update()
+void AirportManager::update(bool paused)
 {
-    for (auto& port : airports)
+    if (!paused)
     {
-        port.update();
-        port.departReadyPlanes([&](){return &airports[std::rand() % airports.size()];});
+        for (auto &port : airports)
+        {
+            port.update();
+            port.departReadyPlanes([&]()
+                                   { return &airports[std::rand() % airports.size()]; });
+        }
     }
 
 #ifdef IMGUI

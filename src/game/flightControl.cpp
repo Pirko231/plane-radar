@@ -13,13 +13,16 @@ FlightControl::FlightControl(sf::Vector2u mapSize, int startingPlanes, IAirportM
     }
 }
 
-void FlightControl::update()
+void FlightControl::update(bool paused)
 {
-    for (auto& plane : objects)
+    if (!paused)
     {
-        plane->update();
-        if (plane->isNearTarget())
-            airportManager.requestLanding(plane.get(), plane->getPosition());
+        for (auto &plane : objects)
+        {
+            plane->update();
+            if (plane->isNearTarget())
+                airportManager.requestLanding(plane.get(), plane->getPosition());
+        }
     }
 
 #ifdef IMGUI

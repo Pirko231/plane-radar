@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$structutil_1_1DefaultStatus.html" title="informacje o nacisnieciu / puszceniu klawisza" alt="" coords="5,31,145,56"/>
+<area shape="rect" id="Node000001" href="$structutil_1_1KeyStatus.html" title=" " alt="" coords="203,5,319,31"/>
+<area shape="poly" id="edge9_Node000000_Node000001" title=" " alt="" coords="159,29,202,23,203,29,159,35"/>
+<area shape="rect" id="Node000002" href="$structutil_1_1MouseStatus.html" title=" " alt="" coords="193,55,328,80"/>
+<area shape="poly" id="edge10_Node000000_Node000002" title=" " alt="" coords="159,52,194,56,193,61,159,57"/>
+</map>

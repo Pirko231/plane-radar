@@ -1,5 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#ifdef IMGUI
+#include "imgui.h"
+#include "imgui-SFML.h"
+#endif
 
 
 class IAirport : public sf::Drawable, public sf::Transformable

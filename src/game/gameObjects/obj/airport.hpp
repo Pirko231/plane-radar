@@ -18,6 +18,10 @@ public:
     sf::FloatRect getGlobalBounds() const override {return sprite.getGlobalBounds();}
 
     bool requestLanding(IFlyable* obj);
+
+#ifdef IMGUI
+    const std::vector<IFlyable*>& getObjects() const {return objects;}
+#endif
 private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override
     {

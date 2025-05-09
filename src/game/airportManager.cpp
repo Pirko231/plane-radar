@@ -16,6 +16,28 @@ void AirportManager::update()
         port.update();
         port.departReadyPlanes([&](){return &airports[std::rand() % airports.size()];});
     }
+
+#ifdef IMGUI
+    ImGui::Begin("AirportManager");
+    for (std::size_t i = 0; i < airports.size(); i++)
+        if (ImGui::CollapsingHeader(std::string("Airport " + std::to_string(i)).c_str()))
+        {
+            ImGui::Text("%s" ,std::string(std::to_string(airports[i].getPosition().x) + ',' + std::to_string(airports[i].getPosition().y)).c_str());
+            int objNumber{};
+            for (auto& plane : airports[i].getObjects())
+            {
+                if (ImGui::CollapsingHeader(std::string("Plane " + std::to_string(objNumber)).c_str()))
+                {
+                    ImGui::Text("%s",std::string( std::to_string(plane->getPosition().x) + ',' + std::to_string(plane->getPosition().y)).c_str());
+                    ImGui::Text("%s", std::string("Fuel " + std::to_string(plane->getFuel())).c_str());
+                }
+                objNumber++;
+            }
+            if (ImGui::Button("Depart ready planes"))
+                airports[i].departReadyPlanes([&](){return &airports[std::rand() % airports.size()];});
+        }
+    ImGui::End();
+#endif
 }
 
 void AirportManager::display(sf::RenderWindow* window)

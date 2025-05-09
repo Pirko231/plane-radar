@@ -6,7 +6,9 @@ Program::Program()
     window = new sf::RenderWindow;
     window->create(sf::VideoMode{mapSize, 32}, sf::String{"Plane radar"} , sf::Style::Close | sf::Style::Titlebar);
     window->setFramerateLimit(75);
+#ifdef IMGUI
     ImGui::SFML::Init(*window);
+#endif
 
     view.setCenter(map.getCenter());
     view.zoom(0.5f);
@@ -14,7 +16,9 @@ Program::Program()
 
 Program::~Program()
 {
+#ifdef IMGUI
     ImGui::SFML::Shutdown();
+#endif
     delete window;
 }
 
@@ -59,9 +63,8 @@ void Program::update()
 {
 #ifdef IMGUI
     ImGui::SFML::Update(*window, sf::seconds(util::dt));
-    ImGui::Begin("Hello, world!");
-        ImGui::Button("Look at this pretty button");
-        ImGui::End();
+    ImGui::Begin("Debug tools");
+    ImGui::End();
 #endif
 
     airportManager.update();

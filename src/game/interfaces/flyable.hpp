@@ -27,6 +27,10 @@ public:
     virtual sf::FloatRect getGlobalBounds() const {return sprite.getGlobalBounds();}
     Status getStatus() const {return status;}
 
+#ifdef IMGUI
+    float getFuel() const {return fuel;}
+#endif
+
 protected:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
     {

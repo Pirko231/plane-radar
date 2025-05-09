@@ -1,8 +1,11 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <optional>
+
+#ifdef IMGUI
 #include "imgui.h"
 #include "imgui-SFML.h"
+#endif
 
 #include "game/airportManager.hpp"
 #include "game/flightControl.hpp"

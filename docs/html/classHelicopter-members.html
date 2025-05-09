@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Space Game: Member List</title>
+<title>Plane radar: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Space Game
+   <div id="projectname">Plane radar
    </div>
   </td>
  </tr>
@@ -75,7 +75,7 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="classHelicopter.html">Helicopter</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>depart</b>(sf::Vector2f target) override (defined in <a class="el" href="classHelicopter.html">Helicopter</a>)</td><td class="entry"><a class="el" href="classHelicopter.html">Helicopter</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>depart</b>(IAirport *target) override (defined in <a class="el" href="classHelicopter.html">Helicopter</a>)</td><td class="entry"><a class="el" href="classHelicopter.html">Helicopter</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>draw</b>(sf::RenderTarget &amp;target, sf::RenderStates states) const (defined in <a class="el" href="classIFlyable.html">IFlyable</a>)</td><td class="entry"><a class="el" href="classIFlyable.html">IFlyable</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>fuel</b> (defined in <a class="el" href="classIFlyable.html">IFlyable</a>)</td><td class="entry"><a class="el" href="classIFlyable.html">IFlyable</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>fuelToDepart</b> (defined in <a class="el" href="classIFlyable.html">IFlyable</a>)</td><td class="entry"><a class="el" href="classIFlyable.html">IFlyable</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
@@ -83,13 +83,14 @@ $(function() {
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>getStatus</b>() const (defined in <a class="el" href="classIFlyable.html">IFlyable</a>)</td><td class="entry"><a class="el" href="classIFlyable.html">IFlyable</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Helicopter</b>(sf::Vector2f pos) (defined in <a class="el" href="classHelicopter.html">Helicopter</a>)</td><td class="entry"><a class="el" href="classHelicopter.html">Helicopter</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>IFlyable</b>(const sf::Texture &amp;texture) (defined in <a class="el" href="classIFlyable.html">IFlyable</a>)</td><td class="entry"><a class="el" href="classIFlyable.html">IFlyable</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>isNearTarget</b>() const override (defined in <a class="el" href="classHelicopter.html">Helicopter</a>)</td><td class="entry"><a class="el" href="classHelicopter.html">Helicopter</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>land</b>() (defined in <a class="el" href="classIFlyable.html">IFlyable</a>)</td><td class="entry"><a class="el" href="classIFlyable.html">IFlyable</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>readyToDepart</b>() const (defined in <a class="el" href="classIFlyable.html">IFlyable</a>)</td><td class="entry"><a class="el" href="classIFlyable.html">IFlyable</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>refill</b>() (defined in <a class="el" href="classIFlyable.html">IFlyable</a>)</td><td class="entry"><a class="el" href="classIFlyable.html">IFlyable</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>refillSpeed</b> (defined in <a class="el" href="classIFlyable.html">IFlyable</a>)</td><td class="entry"><a class="el" href="classIFlyable.html">IFlyable</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>setDestination</b>() override (defined in <a class="el" href="classHelicopter.html">Helicopter</a>)</td><td class="entry"><a class="el" href="classHelicopter.html">Helicopter</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>sprite</b> (defined in <a class="el" href="classIFlyable.html">IFlyable</a>)</td><td class="entry"><a class="el" href="classIFlyable.html">IFlyable</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>status</b> (defined in <a class="el" href="classIFlyable.html">IFlyable</a>)</td><td class="entry"><a class="el" href="classIFlyable.html">IFlyable</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>update</b>() override (defined in <a class="el" href="classHelicopter.html">Helicopter</a>)</td><td class="entry"><a class="el" href="classHelicopter.html">Helicopter</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>sprite</b> (defined in <a class="el" href="classIFlyable.html">IFlyable</a>)</td><td class="entry"><a class="el" href="classIFlyable.html">IFlyable</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>status</b> (defined in <a class="el" href="classIFlyable.html">IFlyable</a>)</td><td class="entry"><a class="el" href="classIFlyable.html">IFlyable</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>update</b>() override (defined in <a class="el" href="classHelicopter.html">Helicopter</a>)</td><td class="entry"><a class="el" href="classHelicopter.html">Helicopter</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

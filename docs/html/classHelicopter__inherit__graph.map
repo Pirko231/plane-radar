@@ -1,6 +1,6 @@
 <map id="Helicopter" name="Helicopter">
 <area shape="rect" id="Node000001" title=" " alt="" coords="83,152,172,177"/>
-<area shape="rect" id="Node000002" href="$classIFlyable.html" title=" " alt="" coords="90,79,165,104"/>
+<area shape="rect" id="Node000002" href="$classIFlyable.html" title="abstrakcja dla wszystkich latajacych obiektow" alt="" coords="90,79,165,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,118,130,152,125,152,125,118"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,5,108,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,39,118,77,114,80,76,43"/>

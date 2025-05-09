@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Space Game: Airport Class Reference</title>
+<title>Plane radar: Airport Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Space Game
+   <div id="projectname">Plane radar
    </div>
   </td>
  </tr>
@@ -80,7 +80,9 @@ Inheritance diagram for Airport:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAirport__inherit__graph.png" border="0" usemap="#aAirport_inherit__map" alt="Inheritance graph"/></div>
 <map name="aAirport_inherit__map" id="aAirport_inherit__map">
-<area shape="rect" title=" " alt="" coords="94,79,161,104"/>
+<area shape="rect" title=" " alt="" coords="94,152,161,177"/>
+<area shape="rect" href="classIAirport.html" title=" " alt="" coords="92,79,163,104"/>
+<area shape="poly" title=" " alt="" coords="130,118,130,152,125,152,125,118"/>
 <area shape="rect" title=" " alt="" coords="5,5,108,31"/>
 <area shape="poly" title=" " alt="" coords="80,39,118,77,114,80,76,43"/>
 <area shape="rect" title=" " alt="" coords="132,5,267,31"/>
@@ -92,7 +94,9 @@ Collaboration diagram for Airport:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAirport__coll__graph.png" border="0" usemap="#aAirport_coll__map" alt="Collaboration graph"/></div>
 <map name="aAirport_coll__map" id="aAirport_coll__map">
-<area shape="rect" title=" " alt="" coords="94,79,161,104"/>
+<area shape="rect" title=" " alt="" coords="94,152,161,177"/>
+<area shape="rect" href="classIAirport.html" title=" " alt="" coords="92,79,163,104"/>
+<area shape="poly" title=" " alt="" coords="130,118,130,152,125,152,125,118"/>
 <area shape="rect" title=" " alt="" coords="5,5,108,31"/>
 <area shape="poly" title=" " alt="" coords="80,39,118,77,114,80,76,43"/>
 <area shape="rect" title=" " alt="" coords="132,5,267,31"/>
@@ -108,19 +112,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0da654087c79fa2a75010b1469b4c0b2" id="r_a0da654087c79fa2a75010b1469b4c0b2"><td class="memItemLeft" align="right" valign="top"><a id="a0da654087c79fa2a75010b1469b4c0b2" name="a0da654087c79fa2a75010b1469b4c0b2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></tr>
 <tr class="separator:a0da654087c79fa2a75010b1469b4c0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c9d361756e585891b584e9e66ed1802" id="r_a6c9d361756e585891b584e9e66ed1802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirport.html#a6c9d361756e585891b584e9e66ed1802">departReadyPlanes</a> (std::function&lt; sf::Vector2f()&gt; where)</td></tr>
-<tr class="memdesc:a6c9d361756e585891b584e9e66ed1802"><td class="mdescLeft">&#160;</td><td class="mdescRight">startuje samoloty do okreslonej pozycji  <br /></td></tr>
-<tr class="separator:a6c9d361756e585891b584e9e66ed1802"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9babaed48c7444ebe3dba772c8463430" id="r_a9babaed48c7444ebe3dba772c8463430"><td class="memItemLeft" align="right" valign="top"><a id="a9babaed48c7444ebe3dba772c8463430" name="a9babaed48c7444ebe3dba772c8463430"></a>
-sf::FloatRect&#160;</td><td class="memItemRight" valign="bottom"><b>getGlobalBounds</b> () const</td></tr>
-<tr class="separator:a9babaed48c7444ebe3dba772c8463430"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a556204ea17a05ed1d9a000f349fdb4a9" id="r_a556204ea17a05ed1d9a000f349fdb4a9"><td class="memItemLeft" align="right" valign="top"><a id="a556204ea17a05ed1d9a000f349fdb4a9" name="a556204ea17a05ed1d9a000f349fdb4a9"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>requestLanding</b> (<a class="el" href="classIFlyable.html">IFlyable</a> &amp;obj)</td></tr>
-<tr class="separator:a556204ea17a05ed1d9a000f349fdb4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a804130f540ff20420bd541d768ecba13" id="r_a804130f540ff20420bd541d768ecba13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirport.html#a804130f540ff20420bd541d768ecba13">departReadyPlanes</a> (std::function&lt; <a class="el" href="classIAirport.html">IAirport</a> *()&gt; where)</td></tr>
+<tr class="memdesc:a804130f540ff20420bd541d768ecba13"><td class="mdescLeft">&#160;</td><td class="mdescRight">startuje samoloty do okreslonej pozycji  <br /></td></tr>
+<tr class="separator:a804130f540ff20420bd541d768ecba13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5617a0b214e578bc10e95e3ec150725a" id="r_a5617a0b214e578bc10e95e3ec150725a"><td class="memItemLeft" align="right" valign="top">sf::FloatRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirport.html#a5617a0b214e578bc10e95e3ec150725a">getGlobalBounds</a> () const override</td></tr>
+<tr class="separator:a5617a0b214e578bc10e95e3ec150725a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf668b0ce10ed762921ee96df96f4f97" id="r_abf668b0ce10ed762921ee96df96f4f97"><td class="memItemLeft" align="right" valign="top"><a id="abf668b0ce10ed762921ee96df96f4f97" name="abf668b0ce10ed762921ee96df96f4f97"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>requestLanding</b> (<a class="el" href="classIFlyable.html">IFlyable</a> *obj)</td></tr>
+<tr class="separator:abf668b0ce10ed762921ee96df96f4f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6c9d361756e585891b584e9e66ed1802" name="a6c9d361756e585891b584e9e66ed1802"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c9d361756e585891b584e9e66ed1802">&#9670;&#160;</a></span>departReadyPlanes()</h2>
+<a id="a804130f540ff20420bd541d768ecba13" name="a804130f540ff20420bd541d768ecba13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a804130f540ff20420bd541d768ecba13">&#9670;&#160;</a></span>departReadyPlanes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -128,7 +131,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>requestLanding</b> (<
         <tr>
           <td class="memname">void Airport::departReadyPlanes </td>
           <td>(</td>
-          <td class="paramtype">std::function&lt; sf::Vector2f()&gt;&#160;</td>
+          <td class="paramtype">std::function&lt; <a class="el" href="classIAirport.html">IAirport</a> *()&gt;&#160;</td>
           <td class="paramname"><em>where</em></td><td>)</td>
           <td></td>
         </tr>
@@ -142,6 +145,33 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>requestLanding</b> (<
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a5617a0b214e578bc10e95e3ec150725a" name="a5617a0b214e578bc10e95e3ec150725a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5617a0b214e578bc10e95e3ec150725a">&#9670;&#160;</a></span>getGlobalBounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::FloatRect Airport::getGlobalBounds </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classIAirport.html">IAirport</a>.</p>
 
 </div>
 </div>

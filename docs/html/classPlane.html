@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Space Game: Plane Class Reference</title>
+<title>Plane radar: Plane Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Space Game
+   <div id="projectname">Plane radar
    </div>
   </td>
  </tr>
@@ -81,7 +81,7 @@ Inheritance diagram for Plane:</div>
 <div class="center"><img src="classPlane__inherit__graph.png" border="0" usemap="#aPlane_inherit__map" alt="Inheritance graph"/></div>
 <map name="aPlane_inherit__map" id="aPlane_inherit__map">
 <area shape="rect" title=" " alt="" coords="98,152,157,177"/>
-<area shape="rect" href="classIFlyable.html" title=" " alt="" coords="90,79,165,104"/>
+<area shape="rect" href="classIFlyable.html" title="abstrakcja dla wszystkich latajacych obiektow" alt="" coords="90,79,165,104"/>
 <area shape="poly" title=" " alt="" coords="130,118,130,152,125,152,125,118"/>
 <area shape="rect" title=" " alt="" coords="5,5,108,31"/>
 <area shape="poly" title=" " alt="" coords="80,39,118,77,114,80,76,43"/>
@@ -95,7 +95,7 @@ Collaboration diagram for Plane:</div>
 <div class="center"><img src="classPlane__coll__graph.png" border="0" usemap="#aPlane_coll__map" alt="Collaboration graph"/></div>
 <map name="aPlane_coll__map" id="aPlane_coll__map">
 <area shape="rect" title=" " alt="" coords="98,152,157,177"/>
-<area shape="rect" href="classIFlyable.html" title=" " alt="" coords="90,79,165,104"/>
+<area shape="rect" href="classIFlyable.html" title="abstrakcja dla wszystkich latajacych obiektow" alt="" coords="90,79,165,104"/>
 <area shape="poly" title=" " alt="" coords="130,118,130,152,125,152,125,118"/>
 <area shape="rect" title=" " alt="" coords="5,5,108,31"/>
 <area shape="poly" title=" " alt="" coords="80,39,118,77,114,80,76,43"/>
@@ -111,10 +111,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5bd77bbe82e9893c26ab7e5740323118"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abac5e3d52ed1b8f2b2abbcfa4780ba15" id="r_abac5e3d52ed1b8f2b2abbcfa4780ba15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlane.html#abac5e3d52ed1b8f2b2abbcfa4780ba15">update</a> () override</td></tr>
 <tr class="separator:abac5e3d52ed1b8f2b2abbcfa4780ba15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac9e10e3b23ff0e1c15acec10a99258d" id="r_aac9e10e3b23ff0e1c15acec10a99258d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlane.html#aac9e10e3b23ff0e1c15acec10a99258d">setDestination</a> () override</td></tr>
-<tr class="separator:aac9e10e3b23ff0e1c15acec10a99258d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d072d70528ddaa84d1dc305d5a1de86" id="r_a3d072d70528ddaa84d1dc305d5a1de86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlane.html#a3d072d70528ddaa84d1dc305d5a1de86">depart</a> (sf::Vector2f target) override</td></tr>
-<tr class="separator:a3d072d70528ddaa84d1dc305d5a1de86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a4d091adbbe9be7ea85fd0dad3f974e" id="r_a2a4d091adbbe9be7ea85fd0dad3f974e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlane.html#a2a4d091adbbe9be7ea85fd0dad3f974e">depart</a> (<a class="el" href="classIAirport.html">IAirport</a> *target) override</td></tr>
+<tr class="separator:a2a4d091adbbe9be7ea85fd0dad3f974e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeddf68b61ac89a8a07c7dc500290b7ca" id="r_aeddf68b61ac89a8a07c7dc500290b7ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlane.html#aeddf68b61ac89a8a07c7dc500290b7ca">isNearTarget</a> () const override</td></tr>
+<tr class="separator:aeddf68b61ac89a8a07c7dc500290b7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96e05f4581aec721f30f34fb145e6ae9" id="r_a96e05f4581aec721f30f34fb145e6ae9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlane.html#a96e05f4581aec721f30f34fb145e6ae9">land</a> () override</td></tr>
+<tr class="separator:a96e05f4581aec721f30f34fb145e6ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classIFlyable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classIFlyable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classIFlyable.html">IFlyable</a></td></tr>
 <tr class="memitem:a013ad0fd8f56dd236953a7c1f19fdcf9 inherit pub_methods_classIFlyable" id="r_a013ad0fd8f56dd236953a7c1f19fdcf9"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><b>IFlyable</b> (const sf::Texture &amp;texture)</td></tr>
@@ -156,8 +158,8 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>refillSpeed</b> {1.f
 <tr class="separator:af7a1838f3b8fb9f9171fd0cc8395db35 inherit pro_attribs_classIFlyable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3d072d70528ddaa84d1dc305d5a1de86" name="a3d072d70528ddaa84d1dc305d5a1de86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d072d70528ddaa84d1dc305d5a1de86">&#9670;&#160;</a></span>depart()</h2>
+<a id="a2a4d091adbbe9be7ea85fd0dad3f974e" name="a2a4d091adbbe9be7ea85fd0dad3f974e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a4d091adbbe9be7ea85fd0dad3f974e">&#9670;&#160;</a></span>depart()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,7 +170,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>refillSpeed</b> {1.f
         <tr>
           <td class="memname">void Plane::depart </td>
           <td>(</td>
-          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramtype"><a class="el" href="classIAirport.html">IAirport</a> *&#160;</td>
           <td class="paramname"><em>target</em></td><td>)</td>
           <td></td>
         </tr>
@@ -184,8 +186,8 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>refillSpeed</b> {1.f
 
 </div>
 </div>
-<a id="aac9e10e3b23ff0e1c15acec10a99258d" name="aac9e10e3b23ff0e1c15acec10a99258d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac9e10e3b23ff0e1c15acec10a99258d">&#9670;&#160;</a></span>setDestination()</h2>
+<a id="aeddf68b61ac89a8a07c7dc500290b7ca" name="aeddf68b61ac89a8a07c7dc500290b7ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeddf68b61ac89a8a07c7dc500290b7ca">&#9670;&#160;</a></span>isNearTarget()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,10 +196,10 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>refillSpeed</b> {1.f
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Plane::setDestination </td>
+          <td class="memname">bool Plane::isNearTarget </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -208,6 +210,33 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>refillSpeed</b> {1.f
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="classIFlyable.html">IFlyable</a>.</p>
+
+</div>
+</div>
+<a id="a96e05f4581aec721f30f34fb145e6ae9" name="a96e05f4581aec721f30f34fb145e6ae9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96e05f4581aec721f30f34fb145e6ae9">&#9670;&#160;</a></span>land()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Plane::land </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classIFlyable.html">IFlyable</a>.</p>
 
 </div>
 </div>

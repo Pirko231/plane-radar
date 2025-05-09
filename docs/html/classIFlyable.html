@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Space Game: IFlyable Class Reference</title>
+<title>Plane radar: IFlyable Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Space Game
+   <div id="projectname">Plane radar
    </div>
   </td>
  </tr>
@@ -77,12 +77,17 @@ $(function() {
   <div class="headertitle"><div class="title">IFlyable Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>abstrakcja dla wszystkich latajacych obiektow  
+ <a href="classIFlyable.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="flyable_8hpp_source.html">flyable.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for IFlyable:</div>
 <div class="dyncontent">
 <div class="center"><img src="classIFlyable__inherit__graph.png" border="0" usemap="#aIFlyable_inherit__map" alt="Inheritance graph"/></div>
 <map name="aIFlyable_inherit__map" id="aIFlyable_inherit__map">
-<area shape="rect" title=" " alt="" coords="90,79,165,104"/>
+<area shape="rect" title="abstrakcja dla wszystkich latajacych obiektow" alt="" coords="90,79,165,104"/>
 <area shape="rect" href="classHelicopter.html" title=" " alt="" coords="33,152,123,177"/>
 <area shape="poly" title=" " alt="" coords="114,117,88,153,84,150,109,114"/>
 <area shape="rect" href="classPlane.html" title=" " alt="" coords="147,152,206,177"/>
@@ -98,7 +103,7 @@ Collaboration diagram for IFlyable:</div>
 <div class="dyncontent">
 <div class="center"><img src="classIFlyable__coll__graph.png" border="0" usemap="#aIFlyable_coll__map" alt="Collaboration graph"/></div>
 <map name="aIFlyable_coll__map" id="aIFlyable_coll__map">
-<area shape="rect" title=" " alt="" coords="90,79,165,104"/>
+<area shape="rect" title="abstrakcja dla wszystkich latajacych obiektow" alt="" coords="90,79,165,104"/>
 <area shape="rect" title=" " alt="" coords="5,5,108,31"/>
 <area shape="poly" title=" " alt="" coords="80,39,118,77,114,80,76,43"/>
 <area shape="rect" title=" " alt="" coords="132,5,267,31"/>
@@ -114,15 +119,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa226dddadd0e9c1352b93cc3d766b7a4" id="r_aa226dddadd0e9c1352b93cc3d766b7a4"><td class="memItemLeft" align="right" valign="top"><a id="aa226dddadd0e9c1352b93cc3d766b7a4" name="aa226dddadd0e9c1352b93cc3d766b7a4"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()=0</td></tr>
 <tr class="separator:aa226dddadd0e9c1352b93cc3d766b7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89e058897fd1948a7bb46772311ae36e" id="r_a89e058897fd1948a7bb46772311ae36e"><td class="memItemLeft" align="right" valign="top"><a id="a89e058897fd1948a7bb46772311ae36e" name="a89e058897fd1948a7bb46772311ae36e"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setDestination</b> ()=0</td></tr>
-<tr class="separator:a89e058897fd1948a7bb46772311ae36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1342d11490fe77bf5e813df2bf985056" id="r_a1342d11490fe77bf5e813df2bf985056"><td class="memItemLeft" align="right" valign="top"><a id="a1342d11490fe77bf5e813df2bf985056" name="a1342d11490fe77bf5e813df2bf985056"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>depart</b> (<a class="el" href="classIAirport.html">IAirport</a> *target)=0</td></tr>
+<tr class="separator:a1342d11490fe77bf5e813df2bf985056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30359d58c32154965b28a5739d82ad13" id="r_a30359d58c32154965b28a5739d82ad13"><td class="memItemLeft" align="right" valign="top"><a id="a30359d58c32154965b28a5739d82ad13" name="a30359d58c32154965b28a5739d82ad13"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isNearTarget</b> () const =0</td></tr>
+<tr class="separator:a30359d58c32154965b28a5739d82ad13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae26b1ac07388d3c7e95d0f6eddc883a" id="r_aae26b1ac07388d3c7e95d0f6eddc883a"><td class="memItemLeft" align="right" valign="top"><a id="aae26b1ac07388d3c7e95d0f6eddc883a" name="aae26b1ac07388d3c7e95d0f6eddc883a"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>land</b> ()</td></tr>
+<tr class="separator:aae26b1ac07388d3c7e95d0f6eddc883a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b24a3dc1b5f3ad979152497a3fe9045" id="r_a4b24a3dc1b5f3ad979152497a3fe9045"><td class="memItemLeft" align="right" valign="top"><a id="a4b24a3dc1b5f3ad979152497a3fe9045" name="a4b24a3dc1b5f3ad979152497a3fe9045"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>refill</b> ()</td></tr>
 <tr class="separator:a4b24a3dc1b5f3ad979152497a3fe9045"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54a523443ca080b36db504c2db9e2fc5" id="r_a54a523443ca080b36db504c2db9e2fc5"><td class="memItemLeft" align="right" valign="top"><a id="a54a523443ca080b36db504c2db9e2fc5" name="a54a523443ca080b36db504c2db9e2fc5"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>depart</b> (sf::Vector2f target)=0</td></tr>
-<tr class="separator:a54a523443ca080b36db504c2db9e2fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51335dc9d0778798c39352ac0fb95f30" id="r_a51335dc9d0778798c39352ac0fb95f30"><td class="memItemLeft" align="right" valign="top"><a id="a51335dc9d0778798c39352ac0fb95f30" name="a51335dc9d0778798c39352ac0fb95f30"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>readyToDepart</b> () const</td></tr>
 <tr class="separator:a51335dc9d0778798c39352ac0fb95f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,7 +165,9 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>fuelToDepart</b> {80
 float&#160;</td><td class="memItemRight" valign="bottom"><b>refillSpeed</b> {1.f}</td></tr>
 <tr class="separator:af7a1838f3b8fb9f9171fd0cc8395db35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>abstrakcja dla wszystkich latajacych obiektow </p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>game/interfaces/<a class="el" href="flyable_8hpp_source.html">flyable.hpp</a></li>
 </ul>
 </div><!-- contents -->

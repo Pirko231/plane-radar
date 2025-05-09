@@ -1,5 +1,5 @@
-<map id="IFlyable" name="IFlyable">
-<area shape="rect" id="Node000001" title="abstrakcja dla wszystkich latajacych obiektow" alt="" coords="90,79,165,104"/>
+<map id="IAirport" name="IAirport">
+<area shape="rect" id="Node000001" title=" " alt="" coords="92,79,163,104"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,5,108,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,39,118,77,114,80,76,43"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="132,5,267,31"/>

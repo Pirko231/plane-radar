@@ -12,5 +12,6 @@ public:
     void display(sf::RenderWindow*);
 
 private:
+    IAirportManager& airportManager;
     std::vector<std::unique_ptr<IFlyable>> objects;
 };

@@ -42,7 +42,7 @@ const Airport &AirportManager::getClosestAirport(sf::Vector2f pos) const
     return *currentAirport;
 }
 
-bool AirportManager::requestLanding(IFlyable& obj, sf::Vector2f pos)
+bool AirportManager::requestLanding(IFlyable* obj, sf::Vector2f pos)
 {
     Airport* requestedAirport{};
     for (auto& airport : airports)

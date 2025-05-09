@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+/// @brief status samolotu (czy leci itd.)
 enum Status : char
 {
     FLYING,
@@ -8,15 +9,17 @@ enum Status : char
     CRASHED
 };
 
+/// @brief abstrakcja dla wszystkich latajacych obiektow
 class IFlyable : public sf::Drawable, public sf::Transformable
 {
 public:
     IFlyable(const sf::Texture& texture) : sprite{texture}
     {}
     virtual void update() = 0;
-    virtual void setDestination() = 0;
-    void refill() {fuel += refillSpeed;}
     virtual void depart(sf::Vector2f target) = 0;
+    virtual bool isNearTarget() const = 0;
+    void land() {status = Status::DOCKED;}
+    void refill() {fuel += refillSpeed;}
 
     bool readyToDepart() const {return fuel >= fuelToDepart;}
 

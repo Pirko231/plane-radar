@@ -14,7 +14,7 @@ public:
 
     const Airport& getClosestAirport(sf::Vector2f pos) const override;
 
-    bool requestLanding(IFlyable&, sf::Vector2f) override;
+    bool requestLanding(IFlyable*, sf::Vector2f) override;
 
 private:
     std::vector<Airport> airports;

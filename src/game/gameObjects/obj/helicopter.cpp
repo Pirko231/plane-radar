@@ -11,7 +11,7 @@ void Helicopter::update()
 
 }
 
-void Helicopter::setDestination()
+bool Helicopter::isNearTarget() const
 {
-    
+    return false;
 }

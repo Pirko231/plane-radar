@@ -86,6 +86,9 @@ void Program::manageView()
         moveView = moveView.normalized();
     moveView *= moveViewSpeed * util::dt;
     
+    if (keys[sf::Keyboard::Scan::LShift].pressed)
+        moveView *= 3.f;
+    
     view.move(moveView);
 
     //zoom the view

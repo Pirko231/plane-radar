@@ -21,8 +21,9 @@ void Airport::departReadyPlanes(std::function<sf::Vector2f()> where)
             plane->depart(where());
 }
 
-bool Airport::requestLanding(IFlyable& obj)
+bool Airport::requestLanding(IFlyable* obj)
 {
-    objects.push_back(&obj);
+    obj->land();
+    objects.push_back(obj);
     return true;
 }

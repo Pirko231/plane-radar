@@ -17,5 +17,6 @@ public:
 #endif
 private:
     sf::Vector2f destination;
+    sf::Vector2f moveBy;
     IAirport* target{};
 };

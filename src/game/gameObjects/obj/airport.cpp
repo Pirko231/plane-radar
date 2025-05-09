@@ -19,7 +19,12 @@ void Airport::departReadyPlanes(std::function<IAirport*()> where)
     for (auto plane = objects.begin(); plane != objects.end(); plane++)
         if ((*plane)->readyToDepart())
         {
-            (*plane)->depart(where());
+            IAirport* destination {where()};
+            do
+                destination = where();
+            while (destination == this);
+
+            (*plane)->depart(destination);
             if (plane == objects.end() - 1)
             {
                 objects.erase(plane);

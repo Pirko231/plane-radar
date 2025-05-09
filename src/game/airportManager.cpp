@@ -37,8 +37,13 @@ void AirportManager::update(bool paused)
                 }
                 objNumber++;
             }
-            if (ImGui::Button("Depart ready planes"))
+            if (ImGui::Button("Depart all planes"))
+            {
+                for (auto& i : airports[i].getObjects())
+                    i->maxFuel();
                 airports[i].departReadyPlanes([&](){return &airports[std::rand() % airports.size()];});
+            }
+                
         }
     ImGui::End();
 #endif

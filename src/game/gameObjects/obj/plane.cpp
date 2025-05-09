@@ -10,10 +10,9 @@ Plane::Plane(sf::Vector2f pos)
 
 void Plane::update()
 {
-    fuel--;
-    if (getPosition() - destination != sf::Vector2f{0.f,0.f})
+    if (status == Status::FLYING)
     {
-        //move({(getPosition() - destination).normalized()});
+        fuel--;
         move(moveBy);
         setRotation(moveBy.angle());
     }
@@ -24,13 +23,13 @@ void Plane::depart(IAirport* _target)
     status = Status::FLYING;
     target = _target;
     destination = _target->getPosition();
-    if (getPosition() - destination != sf::Vector2f{})
-        moveBy = (getPosition() - destination).normalized();
+    if (destination - getPosition() != sf::Vector2f{})
+        moveBy = (destination - getPosition()).normalized();
 }
 
 bool Plane::isNearTarget() const
 {
-    if (std::abs(getPosition().x - destination.x) < 20.f && std::abs(getPosition().y - destination.y) < 20.f  && status == Status::FLYING)
+    if (std::abs(getPosition().x - destination.x) < 40.f && std::abs(getPosition().y - destination.y) < 40.f  && status == Status::FLYING)
         return true;
 
     return true;

@@ -37,6 +37,10 @@ void Airport::departReadyPlanes(std::function<IAirport*()> where)
 bool Airport::requestLanding(IFlyable* obj)
 {
     obj->land();
+    for (auto& i : objects)
+        if (obj == i)
+            return false;
+        
     objects.push_back(obj);
     return true;
 }

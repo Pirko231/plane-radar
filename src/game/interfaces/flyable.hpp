@@ -30,6 +30,7 @@ public:
 #ifdef IMGUI
     float getFuel() const {return fuel;}
     void resetFuel() {fuel = 0.f;}
+    void maxFuel() {fuel = 100.f;}
 #endif
 
 protected:

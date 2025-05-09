@@ -4,7 +4,7 @@ Program::Program()
 : map{mapSize}, airportManager{4, &map}, flightControl{(sf::Vector2u)map.getGlobalBounds().size, 4, airportManager}
 {
     window = new sf::RenderWindow;
-    window->create(sf::VideoMode{mapSize, 32}, sf::String{"Plane radar"} , sf::Style::Close | sf::Style::Titlebar);
+    window->create(sf::VideoMode{mapSize, 32}, sf::String{"Plane radar"} , sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize);
     window->setFramerateLimit(75);
 #ifdef IMGUI
     ImGui::SFML::Init(*window);
@@ -70,6 +70,8 @@ void Program::update()
 #endif
 
     manageView();
+    if (keys[sf::Keyboard::Scan::Space].released)
+        paused = !paused;
 
     airportManager.update(paused);
     flightControl.update(paused);

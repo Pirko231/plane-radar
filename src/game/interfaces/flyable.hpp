@@ -18,7 +18,7 @@ public:
     virtual void update() = 0;
     virtual void depart(sf::Vector2f target) = 0;
     virtual bool isNearTarget() const = 0;
-    void land() {status = Status::DOCKED;}
+    virtual void land() {status = Status::DOCKED;}
     void refill() {fuel += refillSpeed;}
 
     bool readyToDepart() const {return fuel >= fuelToDepart;}

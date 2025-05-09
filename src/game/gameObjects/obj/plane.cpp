@@ -26,7 +26,7 @@ void Plane::depart(sf::Vector2f target)
 
 bool Plane::isNearTarget() const
 {
-    if (std::abs(getPosition().x - destination.x) < 4.f)
+    if (std::abs(getPosition().x - destination.x) < 4.f && status == Status::FLYING)
         return true;
 
     return false;

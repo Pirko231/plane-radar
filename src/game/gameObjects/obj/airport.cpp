@@ -16,9 +16,17 @@ void Airport::update()
 
 void Airport::departReadyPlanes(std::function<sf::Vector2f()> where)
 {
-    for (auto& plane : objects)
-        if (plane->readyToDepart())
-            plane->depart(where());
+    for (auto plane = objects.begin(); plane != objects.end(); plane++)
+        if ((*plane)->readyToDepart())
+        {
+            (*plane)->depart(where());
+            if (plane == objects.end() - 1)
+            {
+                objects.erase(plane);
+                break;
+            }
+            objects.erase(plane);
+        }
 }
 
 bool Airport::requestLanding(IFlyable* obj)

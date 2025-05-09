@@ -16,15 +16,21 @@ set(CMAKE_PREFIX_PATH "/opt/sfml-3")
 set(SFML_INCLUDE_DIR "${SFML_ROOT}/include")
 set(SFML_LIBRARY_DIR "${SFML_ROOT}/lib")
 
+add_compile_definitions(IMGUI)
+
 include_directories(${SFML_INCLUDE_DIR})
 link_directories(${SFML_LIBRARY_DIR})
 
+include_directories(${CMAKE_SOURCE_DIR}/lib/imgui)
+include_directories(${CMAKE_SOURCE_DIR}/lib/imgui/backends)
 include_directories(${CMAKE_SOURCE_DIR}/src/utils)
 include_directories(${CMAKE_SOURCE_DIR}/src/game/interfaces)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/game/gameObjects)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/game/gameObjects/obj)
 
-set(IMGUI_DIR "lib/imgui")
+find_package(OpenGL REQUIRED)
+
+set(IMGUI_DIR "${CMAKE_SOURCE_DIR}/lib/imgui")
 add_library(imgui
     ${IMGUI_DIR}/imgui.cpp
     ${IMGUI_DIR}/imgui_draw.cpp
@@ -37,8 +43,6 @@ add_library(imgui
 target_include_directories(imgui PUBLIC ${IMGUI_DIR} ${IMGUI_DIR}/backends)
 
 
-# Znalezienie (wersja 2.6.1)
-#find_package(SFML 2.6.1 COMPONENTS system window graphics audio network REQUIRED)
 find_package(SFML 3.0.0 COMPONENTS System Window Graphics Audio Network REQUIRED)
 
 
@@ -72,4 +76,4 @@ endif()
 target_compile_features(main PRIVATE cxx_std_20)
 
 # Linkowanie SFML
-target_link_libraries(main PRIVATE ${SFML_LIBS})
+target_link_libraries(main PRIVATE ${SFML_LIBS} imgui OpenGL::GL)

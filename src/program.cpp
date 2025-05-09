@@ -6,6 +6,7 @@ Program::Program()
     window = new sf::RenderWindow;
     window->create(sf::VideoMode{mapSize, 32}, sf::String{"Plane radar"} , sf::Style::Close | sf::Style::Titlebar);
     window->setFramerateLimit(75);
+    ImGui::SFML::Init(*window);
 
     view.setCenter(map.getCenter());
     view.zoom(0.5f);
@@ -13,6 +14,7 @@ Program::Program()
 
 Program::~Program()
 {
+    ImGui::SFML::Shutdown();
     delete window;
 }
 
@@ -45,12 +47,23 @@ void Program::handleEvents()
         }
         if (const auto* mWheel = ev->getIf<sf::Event::MouseWheelScrolled>())
             scrolled = mWheel->delta;
+
+#ifdef IMGUI
+        ImGui::SFML::ProcessEvent(*window, *ev);
+#endif
     }
     
 }
 
 void Program::update()
 {
+#ifdef IMGUI
+    ImGui::SFML::Update(*window, sf::seconds(util::dt));
+    ImGui::Begin("Hello, world!");
+        ImGui::Button("Look at this pretty button");
+        ImGui::End();
+#endif
+
     airportManager.update();
     flightControl.update();
 
@@ -65,7 +78,10 @@ void Program::display()
     airportManager.display(window);
     flightControl.display(window);
 
-    
+
+#ifdef IMGUI
+    ImGui::SFML::Render(*window);
+#endif
     window->display();
 }
 

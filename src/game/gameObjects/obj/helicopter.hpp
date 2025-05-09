@@ -12,7 +12,8 @@ public:
 private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override
     {
-        
+        states.transform *= getTransform();
+        target.draw(sprite,states);
     }
     sf::Sprite sprite;
 };

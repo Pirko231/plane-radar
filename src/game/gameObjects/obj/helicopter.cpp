@@ -3,7 +3,7 @@
 Helicopter::Helicopter(sf::Vector2f pos)
 : IFlyable{}, sprite{util::AssetLoader::get().airport}
 {
-    sprite.setPosition(pos);
+    setPosition(pos);
 }
 
 void Helicopter::update()

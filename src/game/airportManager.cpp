@@ -44,7 +44,10 @@ bool AirportManager::requestLanding(IFlyable& obj, sf::Vector2f pos)
     Airport* requestedAirport{};
     for (auto& airport : airports)
         if (airport.getGlobalBounds().contains(pos))
+        {
             requestedAirport = &airport;
+            break;
+        }
 
     if (requestedAirport)
         return requestedAirport->requestLanding(obj);

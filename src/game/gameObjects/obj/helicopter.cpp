@@ -1,7 +1,7 @@
 #include "helicopter.hpp"
 
 Helicopter::Helicopter(sf::Vector2f pos)
-: IFlyable{}, sprite{util::AssetLoader::get().airport}
+: IFlyable{util::AssetLoader::get().helicopter}
 {
     setPosition(pos);
 }

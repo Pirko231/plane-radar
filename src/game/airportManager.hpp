@@ -17,5 +17,7 @@ public:
     bool requestLanding(IFlyable&, sf::Vector2f) override;
 
 private:
+    const Airport& getRandomAirport() const {return airports[std::rand() % airports.size()];}
+
     std::vector<Airport> airports;
 };

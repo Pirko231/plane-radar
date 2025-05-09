@@ -10,11 +10,12 @@ Airport::Airport(sf::Vector2f pos) : sprite{util::AssetLoader::get().airport}
 
 void Airport::update()
 {
-    
+    for (auto& plane : objects)
+        plane->refill();
 }
 
 bool Airport::requestLanding(IFlyable& obj)
 {
-    planes.push_back(&obj);
+    objects.push_back(&obj);
     return true;
 }

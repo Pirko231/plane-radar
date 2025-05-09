@@ -17,6 +17,9 @@ public:
     }
 
     sf::Texture airport;
+
+    sf::Texture plane;
+    sf::Texture helicopter;
 private:
     AssetLoader();
 };
@@ -26,6 +29,9 @@ private:
 inline util::AssetLoader::AssetLoader()
 {
     airport.loadFromFile("resources/textures/airport.png");
+
+    plane.loadFromFile("resources/textures/plane.png");
+    helicopter.loadFromFile("resources/textures/helicopter.png");
 }
 
 

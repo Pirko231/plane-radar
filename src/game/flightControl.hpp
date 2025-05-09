@@ -7,9 +7,9 @@ class FlightControl
 public:
     FlightControl(sf::Vector2u mapSize, int startingPlanes, IAirportManager&);
 
-    void update() {}
+    void update();
 
-    void display(sf::RenderWindow*) {}
+    void display(sf::RenderWindow*);
 
 private:
     std::vector<std::unique_ptr<IFlyable>> objects;

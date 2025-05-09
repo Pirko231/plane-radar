@@ -20,5 +20,5 @@ private:
         target.draw(sprite, states);
     }
     sf::Sprite sprite;
-    std::vector<IFlyable*> planes;
+    std::vector<IFlyable*> objects;
 };

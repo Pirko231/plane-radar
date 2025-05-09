@@ -11,3 +11,18 @@ FlightControl::FlightControl(sf::Vector2u mapSize, int startingPlanes, IAirportM
         airportManager.requestLanding(*objects[i].get(), objects[i]->getPosition());
     }
 }
+
+void FlightControl::update()
+{
+    for (auto& plane : objects)
+        plane->update();
+}
+
+void FlightControl::display(sf::RenderWindow* window)
+{
+    for (auto& plane : objects)
+    {
+        if (plane->getStatus() == Status::FLYING)
+            window->draw(*plane);
+    }
+}

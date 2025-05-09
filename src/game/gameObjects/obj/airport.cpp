@@ -14,7 +14,7 @@ void Airport::update()
         plane->refill();
 }
 
-void Airport::departReadyPlanes(std::function<sf::Vector2f()> where)
+void Airport::departReadyPlanes(std::function<IAirport*()> where)
 {
     for (auto plane = objects.begin(); plane != objects.end(); plane++)
         if ((*plane)->readyToDepart())

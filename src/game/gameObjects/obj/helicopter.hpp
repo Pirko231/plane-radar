@@ -7,7 +7,7 @@ class Helicopter : public IFlyable
 public:
     Helicopter(sf::Vector2f pos);
     void update() override;
-    void depart(sf::Vector2f target) override {}
+    void depart(IAirport* target) override {}
     bool isNearTarget() const override;
 private:
 

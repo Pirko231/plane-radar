@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "airportInterface.hpp"
 
 /// @brief status samolotu (czy leci itd.)
 enum Status : char
@@ -16,7 +17,7 @@ public:
     IFlyable(const sf::Texture& texture) : sprite{texture}
     {}
     virtual void update() = 0;
-    virtual void depart(sf::Vector2f target) = 0;
+    virtual void depart(IAirport* target) = 0;
     virtual bool isNearTarget() const = 0;
     virtual void land() {status = Status::DOCKED;}
     void refill() {fuel += refillSpeed;}

@@ -14,7 +14,7 @@ void AirportManager::update()
     for (auto& port : airports)
     {
         port.update();
-        port.departReadyPlanes([&](){return airports[std::rand() % airports.size()].getPosition();});
+        port.departReadyPlanes([&](){return &airports[std::rand() % airports.size()];});
     }
 }
 

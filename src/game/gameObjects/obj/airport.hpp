@@ -1,10 +1,10 @@
 #pragma once
-#include <SFML/Graphics.hpp>
 #include <functional>
+#include "airportInterface.hpp"
 #include "base.hpp"
 #include "flyable.hpp"
 
-class Airport : public sf::Drawable, public sf::Transformable
+class Airport : public IAirport
 {
 public:
     Airport(sf::Vector2f pos);
@@ -13,9 +13,9 @@ public:
 
     /// @brief startuje samoloty do okreslonej pozycji 
     /// @param where funkcja ktora zwraca losowa pozycje lotniska
-    void departReadyPlanes(std::function<sf::Vector2f()> where);
+    void departReadyPlanes(std::function<IAirport*()> where);
 
-    sf::FloatRect getGlobalBounds() const {return sprite.getGlobalBounds();}
+    sf::FloatRect getGlobalBounds() const override {return sprite.getGlobalBounds();}
 
     bool requestLanding(IFlyable* obj);
 private:

@@ -18,10 +18,11 @@ void Plane::update()
     }
 }
 
-void Plane::depart(sf::Vector2f target)
+void Plane::depart(IAirport* _target)
 {
     status = Status::FLYING;
-    destination = target;
+    target = _target;
+    destination = _target->getPosition();
 }
 
 bool Plane::isNearTarget() const

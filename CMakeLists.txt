@@ -10,6 +10,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 # 🟢 Ustawienie ścieżek do SFML (zmień na swoją lokalizację SFML)
+
 set(SFML_ROOT "/opt/sfml-3")
 set(CMAKE_PREFIX_PATH "/opt/sfml-3")
 set(SFML_INCLUDE_DIR "${SFML_ROOT}/include")
@@ -22,6 +23,18 @@ include_directories(${CMAKE_SOURCE_DIR}/src/utils)
 include_directories(${CMAKE_SOURCE_DIR}/src/game/interfaces)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/game/gameObjects)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/game/gameObjects/obj)
+
+set(IMGUI_DIR "lib/imgui")
+add_library(imgui
+    ${IMGUI_DIR}/imgui.cpp
+    ${IMGUI_DIR}/imgui_draw.cpp
+    ${IMGUI_DIR}/imgui_tables.cpp
+    ${IMGUI_DIR}/imgui_widgets.cpp
+    ${IMGUI_DIR}/backends/imgui-SFML.cpp  # albo sfml, glfw, itd.
+    ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
+)
+
+target_include_directories(imgui PUBLIC ${IMGUI_DIR} ${IMGUI_DIR}/backends)
 
 
 # Znalezienie (wersja 2.6.1)

@@ -16,6 +16,9 @@ public:
 
     bool requestLanding(IFlyable*, sf::Vector2f) override;
 
+#ifdef IMGUI
+    Airport* getRandomAirport() override {return &airports[std::rand() % airports.size()];}
+#endif
 private:
     std::vector<Airport> airports;
 };

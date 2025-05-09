@@ -29,6 +29,7 @@ public:
 
 #ifdef IMGUI
     float getFuel() const {return fuel;}
+    void resetFuel() {fuel = 0.f;}
 #endif
 
 protected:

@@ -9,5 +9,7 @@ public:
 
     virtual bool requestLanding(IFlyable*, sf::Vector2f) = 0;
 
-
+#ifdef IMGUI
+    virtual Airport* getRandomAirport() = 0;
+#endif
 };

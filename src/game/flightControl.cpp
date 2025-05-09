@@ -21,6 +21,41 @@ void FlightControl::update()
         if (plane->isNearTarget())
             airportManager.requestLanding(plane.get(), plane->getPosition());
     }
+
+#ifdef IMGUI
+    ImGui::Begin("FlightControl");
+    for (std::size_t i = 0; i < objects.size(); i++)
+    {
+        bool changedColor{};
+        if (objects[i]->getStatus() == Status::DOCKED)
+        {
+            ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(0.2f, 0.7f, 0.2f, 1.0f));
+            changedColor = true;
+        }
+        else if (objects[i]->getStatus() == Status::CRASHED)
+        {
+            ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(1.0f, 0.0f, 0.0f, 1.0f));
+            changedColor = true;
+        }
+
+        if (ImGui::CollapsingHeader(std::string("Plane " + std::to_string(i)).c_str()))
+        {
+            ImGui::Text("%s" ,std::string("Position " + std::to_string(objects[i]->getPosition().x) + ',' + std::to_string(objects[i]->getPosition().y)).c_str());
+            if (Plane* plane = dynamic_cast<Plane*>(objects[i].get()))
+                ImGui::Text("%s", std::string("Destination " + std::to_string(plane->getDestination().x) + ',' + std::to_string(plane->getDestination().y)).c_str());
+            ImGui::Text("%s", std::string("Fuel " + std::to_string(objects[i]->getFuel())).c_str());
+            
+            
+            if (ImGui::Button("Find new target"))
+                objects[i]->depart(airportManager.getRandomAirport());
+            if (ImGui::Button("Crash plane"))
+                objects[i]->resetFuel();
+        }
+        if (changedColor)
+            ImGui::PopStyleColor(1);
+    }
+    ImGui::End();
+#endif
 }
 
 void FlightControl::display(sf::RenderWindow* window)

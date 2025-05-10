@@ -20,6 +20,8 @@ public:
 
     sf::Texture plane;
     sf::Texture helicopter;
+
+    sf::Texture crash;
 private:
     AssetLoader();
 };
@@ -32,6 +34,8 @@ inline util::AssetLoader::AssetLoader()
 
     plane.loadFromFile("resources/textures/plane.png");
     helicopter.loadFromFile("resources/textures/helicopter.png");
+
+    crash.loadFromFile("resources/textures/explosion.png");
 }
 
 

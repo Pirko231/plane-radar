@@ -65,7 +65,7 @@ void FlightControl::display(sf::RenderWindow* window)
 {
     for (auto& plane : objects)
     {
-        if (plane->getStatus() == Status::FLYING)
+        if (plane->getStatus() == Status::FLYING || plane->getStatus() == Status::CRASHED)
             window->draw(*plane);
     }
 }

@@ -21,6 +21,8 @@ public:
     sf::Vector2f getDestination() const {return destination;}
 #endif
 private:
+    void crash();
+    
     sf::Vector2f destination;
     sf::Vector2f moveBy;
     IAirport* target{};

@@ -43,5 +43,5 @@ protected:
     Status status;
     float fuel{100.f};
     float fuelToDepart{80.f};
-    float refillSpeed{1.f};
+    float refillSpeed{0.2f};
 };

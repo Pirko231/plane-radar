@@ -14,11 +14,10 @@ public:
 
     const Airport& getClosestAirport(sf::Vector2f pos) const override;
 
-    bool requestLanding(IFlyable*, sf::Vector2f) override;
+    bool requestLanding(IFlyable*, sf::FloatRect) override;
 
-#ifdef IMGUI
     Airport* getRandomAirport() override {return &airports[std::rand() % airports.size()];}
-#endif
+
 private:
     std::vector<Airport> airports;
 };

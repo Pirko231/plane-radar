@@ -2,9 +2,8 @@
 
 Airport::Airport(sf::Vector2f pos) : sprite{util::AssetLoader::get().airport}
 {
-    setPosition(pos);
-    sprite.setPosition(pos);
     sprite.setScale({1.f,1.f});
+    setPosition(pos);
     
 }
 

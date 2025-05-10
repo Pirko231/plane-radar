@@ -25,4 +25,6 @@ void Plane::depart(IAirport* _target)
     destination = _target->getGlobalBounds().getCenter();
     if (destination - getPosition() != sf::Vector2f{})
         moveBy = (destination - getPosition()).normalized();
+    else
+        moveBy = {1.f,1.f};
 }

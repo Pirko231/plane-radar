@@ -7,9 +7,8 @@ FlightControl::FlightControl(sf::Vector2u mapSize, int startingPlanes, IAirportM
     for (int i = 0; i < startingPlanes; i++)
     {
         auto getRandomPos = [&]() -> sf::Vector2f {return sf::Vector2f{std::rand() % mapSize.x + 1.f, std::rand() % mapSize.y + 1.f};};
-        objects.push_back(factory.createPlane(getRandomPos()));
-        objects[i]->setPosition(airportManager.getClosestAirport(objects[i]->getPosition()).getPosition());
-        airportManager.requestLanding(objects[i].get(), objects[i]->getPosition());
+        objects.push_back(factory.createPlane(airportManager.getRandomAirport()->getPosition()));
+        airportManager.requestLanding(objects[i].get(), objects[i]->getGlobalBounds());
     }
 }
 
@@ -19,9 +18,10 @@ void FlightControl::update(bool paused)
     {
         for (auto &plane : objects)
         {
-            plane->update();
             if (plane->getGlobalBounds().findIntersection(plane->getTarget()))
-                airportManager.requestLanding(plane.get(), plane->getPosition());
+                airportManager.requestLanding(plane.get(), plane->getGlobalBounds());
+            plane->update();
+            
         }
     }
 

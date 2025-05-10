@@ -22,15 +22,7 @@ void Plane::depart(IAirport* _target)
 {
     status = Status::FLYING;
     target = _target;
-    destination = _target->getPosition();
+    destination = _target->getGlobalBounds().getCenter();
     if (destination - getPosition() != sf::Vector2f{})
         moveBy = (destination - getPosition()).normalized();
-}
-
-bool Plane::isNearTarget() const
-{
-    if (std::abs(getPosition().x - destination.x) < 40.f && std::abs(getPosition().y - destination.y) < 40.f  && status == Status::FLYING)
-        return true;
-
-    return true;
 }

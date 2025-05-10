@@ -20,7 +20,7 @@ void FlightControl::update(bool paused)
         for (auto &plane : objects)
         {
             plane->update();
-            if (plane->isNearTarget())
+            if (plane->getGlobalBounds().findIntersection(plane->getTarget()))
                 airportManager.requestLanding(plane.get(), plane->getPosition());
         }
     }

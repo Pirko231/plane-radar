@@ -9,7 +9,12 @@ public:
     Plane(sf::Vector2f pos);
     void update() override;
     void depart(IAirport* target) override;
-    bool isNearTarget() const override;
+    sf::FloatRect getTarget() const override
+    {
+        if (target)
+            return target->getGlobalBounds();
+        return sf::FloatRect{};
+    }
     void land() override {status = Status::DOCKED; destination = getPosition(); moveBy = {};}
 
 #ifdef IMGUI

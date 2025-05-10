@@ -18,13 +18,13 @@ public:
     {}
     virtual void update() = 0;
     virtual void depart(IAirport* target) = 0;
-    virtual bool isNearTarget() const = 0;
+    virtual sf::FloatRect getTarget() const = 0;
     virtual void land() {status = Status::DOCKED;}
     void refill() {fuel += refillSpeed;}
 
     bool readyToDepart() const {return fuel >= fuelToDepart;}
 
-    virtual sf::FloatRect getGlobalBounds() const {return sprite.getGlobalBounds();}
+    virtual sf::FloatRect getGlobalBounds() const {return sf::FloatRect{getPosition(), sprite.getGlobalBounds().size};}
     Status getStatus() const {return status;}
 
 #ifdef IMGUI

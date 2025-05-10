@@ -11,7 +11,7 @@ void Helicopter::update()
 
 }
 
-bool Helicopter::isNearTarget() const
+sf::FloatRect Helicopter::getTarget() const
 {
-    return false;
+    return sf::FloatRect{};
 }

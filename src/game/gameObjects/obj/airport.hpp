@@ -15,7 +15,7 @@ public:
     /// @param where funkcja ktora zwraca losowa pozycje lotniska
     void departReadyPlanes(std::function<IAirport*()> where);
 
-    sf::FloatRect getGlobalBounds() const override {return sprite.getGlobalBounds();}
+    sf::FloatRect getGlobalBounds() const override {return sf::FloatRect{getPosition(), sprite.getGlobalBounds().size};}
 
     bool requestLanding(IFlyable* obj);
 

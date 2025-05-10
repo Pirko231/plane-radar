@@ -17,8 +17,9 @@ void FlightControl::update(bool paused)
     {
         for (auto &plane : objects)
         {
-            if (plane->getGlobalBounds().findIntersection(plane->getTarget()->getGlobalBounds()))
-                airportManager.requestLanding(plane.get(), plane->getTarget());
+            if (plane->getStatus() == Status::FLYING)
+                if (plane->getGlobalBounds().findIntersection(plane->getTarget()->getGlobalBounds()))
+                    airportManager.requestLanding(plane.get(), plane->getTarget());
             plane->update();
             
         }

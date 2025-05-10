@@ -75,12 +75,8 @@ const Airport &AirportManager::getClosestAirport(sf::Vector2f pos) const
 bool AirportManager::requestLanding(IFlyable* obj, IAirport* where)
 {
     Airport* requestedAirport{};
-    for (auto& airport : airports)
-        if (airport.getGlobalBounds().findIntersection(where->getGlobalBounds()))
-        {
-            requestedAirport = &airport;
-            break;
-        }
+    if (where->getGlobalBounds().findIntersection(where->getGlobalBounds()))
+        requestedAirport = dynamic_cast<Airport*>(where);
 
     if (requestedAirport)
         return requestedAirport->requestLanding(obj);

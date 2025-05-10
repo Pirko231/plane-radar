@@ -13,6 +13,8 @@ Map::~Map()
 
 sf::Vector2f Map::getRandomPoint() const
 {
-    sf::Vector2f pos{std::rand() % windowSize.x + 1.f, std::rand() % windowSize.y + 1.f};
+    std::uniform_int_distribution<int> x(0, windowSize.x);
+    std::uniform_int_distribution<int> y(0, windowSize.y);
+    sf::Vector2f pos{static_cast<float>(x(util::engine)), static_cast<float>(y(util::engine))};
     return pos;
 }

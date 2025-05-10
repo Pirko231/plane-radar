@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <span>
+#include "base.hpp"
 
 class Map : public sf::Drawable
 {

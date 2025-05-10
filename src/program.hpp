@@ -29,7 +29,7 @@ private:
     std::unordered_map<sf::Mouse::Button, util::MouseStatus> mButtons;
     float scrolled{};
 
-    sf::Vector2u mapSize{1280u,720u};
+    sf::Vector2u mapSize{util::ConfigLoader::get().mapSize};
     sf::View view;
     float moveViewSpeed{100.f};
 

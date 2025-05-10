@@ -1,6 +1,7 @@
 #pragma once
 #include <random>
 #include "assetLoader.hpp"
+#include "configLoader.hpp"
 
 /// @brief utilities, wystarczy includowac base.hpp
 namespace util

@@ -11,7 +11,7 @@ void Helicopter::update()
 
 }
 
-sf::FloatRect Helicopter::getTarget() const
+IAirport* Helicopter::getTarget() const
 {
-    return sf::FloatRect{};
+    return nullptr;
 }

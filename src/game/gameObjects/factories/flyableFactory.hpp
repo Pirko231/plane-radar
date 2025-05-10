@@ -6,9 +6,9 @@
 class FlyableFactory
 {
 public:
-    std::unique_ptr<IFlyable> createPlane(sf::Vector2f pos)
+    std::unique_ptr<IFlyable> createPlane(IAirport* target)
     {
-        return std::make_unique<Plane>(pos);
+        return std::make_unique<Plane>(target);
     }
     std::unique_ptr<IFlyable> createHeli(sf::Vector2f pos)
     {

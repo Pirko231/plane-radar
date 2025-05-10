@@ -14,9 +14,13 @@ public:
 
     const Airport& getClosestAirport(sf::Vector2f pos) const override;
 
-    bool requestLanding(IFlyable*, sf::FloatRect) override;
+    bool requestLanding(IFlyable*, IAirport*) override;
 
-    Airport* getRandomAirport() override {return &airports[std::rand() % airports.size()];}
+    Airport* getRandomAirport() override 
+    {
+        std::uniform_int_distribution<int> dist(0, airports.size() - 1);
+        return &airports[dist(util::engine)];
+    }
 
 private:
     std::vector<Airport> airports;

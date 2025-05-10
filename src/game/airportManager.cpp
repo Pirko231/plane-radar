@@ -16,8 +16,7 @@ void AirportManager::update(bool paused)
         for (auto &port : airports)
         {
             port.update();
-            port.departReadyPlanes([&]()
-                                   { return &airports[std::rand() % airports.size()]; });
+            port.departReadyPlanes([this](){ return getRandomAirport(); });
         }
     }
 
@@ -73,11 +72,11 @@ const Airport &AirportManager::getClosestAirport(sf::Vector2f pos) const
     return *currentAirport;
 }
 
-bool AirportManager::requestLanding(IFlyable* obj, sf::FloatRect hitbox)
+bool AirportManager::requestLanding(IFlyable* obj, IAirport* where)
 {
     Airport* requestedAirport{};
     for (auto& airport : airports)
-        if (airport.getGlobalBounds().findIntersection(hitbox))
+        if (airport.getGlobalBounds().findIntersection(where->getGlobalBounds()))
         {
             requestedAirport = &airport;
             break;

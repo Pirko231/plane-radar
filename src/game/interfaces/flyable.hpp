@@ -18,7 +18,7 @@ public:
     {}
     virtual void update() = 0;
     virtual void depart(IAirport* target) = 0;
-    virtual sf::FloatRect getTarget() const = 0;
+    virtual IAirport* getTarget() const = 0;
     virtual void land() {status = Status::DOCKED;}
     void refill() {fuel += refillSpeed;}
 

@@ -1,9 +1,10 @@
 #include "plane.hpp"
 
-Plane::Plane(sf::Vector2f pos)
+Plane::Plane(IAirport* _target)
 : IFlyable{util::AssetLoader::get().plane}
 {
-    setPosition(pos);
+    target = _target;
+    setPosition(target->getPosition());
     sprite.setScale({0.15f,0.2f});
     sprite.setOrigin(sprite.getGlobalBounds().getCenter());
 }

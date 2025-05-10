@@ -6,14 +6,14 @@
 class Plane : public IFlyable
 {
 public:
-    Plane(sf::Vector2f pos);
+    Plane(IAirport*);
     void update() override;
     void depart(IAirport* target) override;
-    sf::FloatRect getTarget() const override
+    IAirport* getTarget() const override
     {
         if (target)
-            return target->getGlobalBounds();
-        return sf::FloatRect{};
+            return target;
+        return nullptr;
     }
     void land() override {status = Status::DOCKED; destination = getPosition(); moveBy = {};}
 

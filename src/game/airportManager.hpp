@@ -12,7 +12,7 @@ public:
 
     void display(sf::RenderWindow* window);
 
-    const Airport& getClosestAirport(sf::Vector2f pos) const override;
+    Airport* getClosestAirport(sf::Vector2f pos) override;
 
     bool requestLanding(IFlyable*, IAirport*) override;
 

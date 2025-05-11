@@ -21,7 +21,8 @@ void FlightControl::update(bool paused)
                 if (plane->getGlobalBounds().findIntersection(plane->getTarget()->getGlobalBounds()))
                     airportManager.requestLanding(plane.get(), plane->getTarget());
             plane->update();
-            
+            if (plane->needsEmergencyLanding())
+                plane->depart(airportManager.getClosestAirport(plane->getPosition()));
         }
     }
 

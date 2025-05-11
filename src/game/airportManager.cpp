@@ -54,10 +54,10 @@ void AirportManager::display(sf::RenderWindow* window)
         window->draw(port);
 }
 
-const Airport &AirportManager::getClosestAirport(sf::Vector2f pos) const
+Airport* AirportManager::getClosestAirport(sf::Vector2f pos)
 {
     sf::Vector2f minOffset{1.f,1.f};
-    const Airport* currentAirport{};
+    Airport* currentAirport{};
 
     for (auto& airport : airports)
     {
@@ -69,7 +69,7 @@ const Airport &AirportManager::getClosestAirport(sf::Vector2f pos) const
             currentAirport = &airport;
         }
     }
-    return *currentAirport;
+    return currentAirport;
 }
 
 bool AirportManager::requestLanding(IFlyable* obj, IAirport* where)

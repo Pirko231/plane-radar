@@ -21,6 +21,16 @@ public:
     virtual IAirport* getTarget() const = 0;
     virtual void land() {status = Status::DOCKED;}
     void refill() {fuel += refillSpeed;}
+    bool needsEmergencyLanding()
+    {
+        if (!hasClosestAirport && fuel < 30.f)
+        {
+            hasClosestAirport = true;
+            return true;
+        }
+            
+        return false;
+    }
 
     bool readyToDepart() const {return fuel >= fuelToDepart;}
 
@@ -45,4 +55,5 @@ protected:
     float fuelToDepart{80.f};
     float refillSpeed{0.2f};
     float fuelUsage{util::ConfigLoader::get().fuelUsage};
+    bool hasClosestAirport{};
 };

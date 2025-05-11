@@ -5,7 +5,7 @@
 class IAirportManager
 {
 public:
-    virtual const Airport& getClosestAirport(sf::Vector2f pos) const = 0;
+    virtual Airport* getClosestAirport(sf::Vector2f pos) = 0;
 
     virtual bool requestLanding(IFlyable*, IAirport*) = 0;
 

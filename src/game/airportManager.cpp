@@ -56,14 +56,14 @@ void AirportManager::display(sf::RenderWindow* window)
 
 Airport* AirportManager::getClosestAirport(sf::Vector2f pos)
 {
-    sf::Vector2f minOffset{1.f,1.f};
+    sf::Vector2f minOffset{};
     Airport* currentAirport{};
 
     for (auto& airport : airports)
     {
         sf::Vector2f offset{};
-        offset = pos -airport.getGlobalBounds().position;
-        if (offset.length() > minOffset.length())
+        offset = airport.getGlobalBounds().position - pos;
+        if ((minOffset != sf::Vector2f{} ? offset.length() < minOffset.length() : true))
         {
             minOffset = offset;
             currentAirport = &airport;

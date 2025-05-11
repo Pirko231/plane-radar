@@ -15,7 +15,7 @@ public:
             return target;
         return nullptr;
     }
-    void land() override {status = Status::DOCKED; destination = getPosition(); moveBy = {};}
+    void land() override {status = Status::DOCKED; destination = getPosition(); moveBy = {}; hasClosestAirport = false;}
 
 #ifdef IMGUI
     sf::Vector2f getDestination() const {return destination;}

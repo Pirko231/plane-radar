@@ -1,6 +1,7 @@
 #pragma once
 #include <fstream>
 #include <SFML/Graphics.hpp>
+#include <charconv>
 
 namespace util
 {
@@ -14,8 +15,9 @@ public:
         return confLoader;
     }
 
-    sf::Vector2u mapSize{1280u,720u};
-    int airportAmount{4};
+    sf::Vector2u mapSize{2000u,2000u};
+    int airportAmount{8};
+    float fuelUsage{0.05f};
 
     ~ConfigLoader()
     {
@@ -32,6 +34,22 @@ public:
     }
 private:
     ConfigLoader();
+
+
+    template<typename T>
+    T read(std::fstream& file, T defaultValue, char character = ';')
+    {
+        T result{};
+        std::string data;
+        std::getline(file, data, character);
+        if (data[0] == ' ')
+            data.erase(data.begin());
+
+        if (std::from_chars(data.data(), data.data() + data.size(), result).ec == std::errc{})
+            return result;
+        else
+            return defaultValue;
+    }
 };
 
 };
@@ -43,30 +61,11 @@ inline util::ConfigLoader::ConfigLoader()
     if (file.is_open())
     {
         std::string dump;
-        std::string data;
         std::getline(file, dump, ':');
-        std::getline(file, data, ',');
-        try
-        {
-            mapSize.x = std::stoi(data);
-        }
-        catch(const std::exception& e)
-        {}
-        std::getline(file, data, ';');
-        try
-        {
-            mapSize.y = std::stoi(data);
-        }
-        catch(const std::exception& e)
-        {}
+        mapSize.x = read<int>(file, mapSize.x, ',');
+        mapSize.y = read<int>(file, mapSize.y);
         std::getline(file, dump, ':');
-        std::getline(file, data, ';');
-        try
-        {
-            airportAmount = std::stoi(data);
-        }
-        catch(const std::exception& e)
-        {}
+        airportAmount = read<int>(file, airportAmount);
         
         
     }

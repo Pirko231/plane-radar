@@ -27,6 +27,12 @@ void FlightControl::update(bool paused)
 
 #ifdef IMGUI
     ImGui::Begin("FlightControl");
+    if (ImGui::Button("Create new plane"))
+    {
+        FlyableFactory factory;
+        objects.push_back(factory.createPlane(airportManager.getRandomAirport()));
+        airportManager.requestLanding((objects.end() - 1)->operator->(), (objects.end() - 1)->operator->()->getTarget());
+    }
     for (std::size_t i = 0; i < objects.size(); i++)
     {
         bool changedColor{};

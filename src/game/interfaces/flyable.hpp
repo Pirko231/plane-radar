@@ -44,4 +44,5 @@ protected:
     float fuel{100.f};
     float fuelToDepart{80.f};
     float refillSpeed{0.2f};
+    float fuelUsage{util::ConfigLoader::get().fuelUsage};
 };

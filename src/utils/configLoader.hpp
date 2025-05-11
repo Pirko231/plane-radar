@@ -28,7 +28,8 @@ public:
             file << "Modify your configuration here, in case something stops working, delete this file.\n"
                 << "------------------SETTINGS------------------\n";
             file << "Map size: " << mapSize.x << ',' << mapSize.y << ";\n"
-                << "Airport amount: " << airportAmount << ";\n";
+                << "Airport amount: " << airportAmount << ";\n"
+                << "Plane fuel usage: " << fuelUsage << ";\n";
         }
         file.close();
     }
@@ -66,7 +67,8 @@ inline util::ConfigLoader::ConfigLoader()
         mapSize.y = read<int>(file, mapSize.y);
         std::getline(file, dump, ':');
         airportAmount = read<int>(file, airportAmount);
-        
+        std::getline(file, dump, ':');
+        fuelUsage = read<float>(file, fuelUsage);
         
     }
     file.close();

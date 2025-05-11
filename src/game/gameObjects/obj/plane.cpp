@@ -15,7 +15,7 @@ void Plane::update()
         crash();
     if (status == Status::FLYING)
     {
-        fuel -= 0.1f;
+        fuel -= fuelUsage;
         move(moveBy);
         setRotation(moveBy.angle());
         

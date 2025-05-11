@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "base.hpp"
 #ifdef IMGUI
 #include "imgui.h"
 #include "imgui-SFML.h"

@@ -11,7 +11,7 @@ Program::Program()
 #endif
 
     view.setCenter(map.getCenter());
-    view.zoom(0.5f);
+    view.setSize(map.getGlobalBounds().size);
 }
 
 Program::~Program()
@@ -107,7 +107,9 @@ void Program::manageView()
     
     if (moveView != sf::Vector2f{})
         moveView = moveView.normalized();
-    moveView *= moveViewSpeed * util::dt;
+    
+    moveView.x *= view.getSize().x / 140.f *  moveViewSpeed * util::dt;
+    moveView.y *= view.getSize().x / 140.f *  moveViewSpeed * util::dt; //celowo x aby poruszal sie rownomiernie
     
     if (keys[sf::Keyboard::Scan::LShift].pressed)
         moveView *= 3.f;

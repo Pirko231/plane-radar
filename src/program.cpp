@@ -81,6 +81,7 @@ void Program::display()
 {
     window->clear();
     window->setView(view);
+    window->draw(map);
 
     airportManager.display(window);
     flightControl.display(window);

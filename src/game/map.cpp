@@ -39,6 +39,15 @@ void Map::generateMap(sf::Texture &txt, std::span<std::uint8_t> data, sf::Vector
 
     int waterAmount{4};
 
+    for (std::size_t i = 0; i < data.size(); i += 4)
+    {
+        sf::Color color = getRandomTerrain();
+        data[i] = color.r;
+        data[i + 1] = color.g;
+        data[i + 2] = color.b;
+        data[i + 3] = color.a;
+    }
+
     
     std::uniform_int_distribution<int> TerrainSize (0,9);
     std::uniform_int_distribution<int> TerrainBalance (0,3);

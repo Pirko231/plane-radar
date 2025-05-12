@@ -9,6 +9,7 @@ public:
     Plane(IAirport*);
     void update() override;
     void depart(IAirport* target) override;
+    void setTarget(IAirport*) override;
     IAirport* getTarget() const override
     {
         if (target)

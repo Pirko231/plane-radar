@@ -9,6 +9,7 @@ public:
     void update() override;
     void depart(IAirport* target) override {}
     IAirport* getTarget() const override;
+    void setTarget(IAirport*) override {}
 private:
 
 };

@@ -1,6 +1,6 @@
 #pragma once
-#include "factories/airportFactory.hpp"
-#include "factories/flyableFactory.hpp"
+#include "airport.hpp"
+#include "flyable.hpp"
 
 class IAirportManager
 {

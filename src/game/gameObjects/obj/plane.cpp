@@ -13,7 +13,7 @@ void Plane::update()
 {
     if (fuel <= 0.f)
         crash();
-    if (status == Status::FLYING)
+    if (status == Status::FLYING || status == Status::EMERGENCY)
     {
         fuel -= fuelUsage;
         move(moveBy);
@@ -26,6 +26,11 @@ void Plane::update()
 void Plane::depart(IAirport* _target)
 {
     status = Status::FLYING;
+    setTarget(_target);
+}
+
+void Plane::setTarget(IAirport* _target)
+{
     target = _target;
     destination = _target->getGlobalBounds().getCenter();
     if (destination - getPosition() != sf::Vector2f{})

@@ -7,7 +7,8 @@ enum Status : char
 {
     FLYING,
     DOCKED,
-    CRASHED
+    CRASHED,
+    EMERGENCY
 };
 
 /// @brief abstrakcja dla wszystkich latajacych obiektow
@@ -18,6 +19,7 @@ public:
     {}
     virtual void update() = 0;
     virtual void depart(IAirport* target) = 0;
+    virtual void setTarget(IAirport*) = 0;
     virtual IAirport* getTarget() const = 0;
     virtual void land() {status = Status::DOCKED; hasClosestAirport = false;}
     void refill() {fuel += refillSpeed;}
@@ -26,6 +28,7 @@ public:
         if (!hasClosestAirport && fuel < 30.f && status != Status::DOCKED)
         {
             hasClosestAirport = true;
+            status = Status::EMERGENCY;
             return true;
         }
             

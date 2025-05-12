@@ -36,27 +36,24 @@ sf::Color Map::getRandomTerrain() const
 void Map::generateMap(sf::Texture &txt, std::span<std::uint8_t> data, sf::Vector2i mapSize)
 {
     auto [width, height] {mapSize};
-
     int waterAmount{4};
 
-    /*for (std::size_t i = 0; i < data.size(); i += 4)
+    // przyjmuje wskaznik do koloru i modyfikuje 4 kolejne elementy tablicy
+    auto setColor = [](std::uint8_t* where, sf::Color color)
     {
-        sf::Color color = getRandomTerrain();
-        data[i] = color.r;
-        data[i + 1] = color.g;
-        data[i + 2] = color.b;
-        data[i + 3] = color.a;
-    }*/
+        *where = color.r;
+        *(where + 1) = color.g;
+        *(where + 2) = color.b;
+        *(where + 3) = color.a;
+    };
+
     for (std::size_t i = 0; i < mapSize.y * 4; i++)
     {
         for (std::size_t j = 0; j < mapSize.x; j += 4)
         {
             std::size_t pos = j + i * mapSize.y;
             sf::Color color = Tile::grass;
-            data[pos] = color.r;
-            data[pos + 1] = color.g;
-            data[pos + 2] = color.b;
-            data[pos + 3] = color.a;
+            setColor(&data[pos], color);
         }
     }
 

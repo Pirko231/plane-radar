@@ -21,13 +21,12 @@ public:
     virtual void depart(IAirport* target) = 0;
     virtual void setTarget(IAirport*) = 0;
     virtual IAirport* getTarget() const = 0;
-    virtual void land() {status = Status::DOCKED; hasClosestAirport = false;}
+    virtual void land() {status = Status::DOCKED;}
     void refill() {fuel += refillSpeed;}
     bool needsEmergencyLanding()
     {
-        if (!hasClosestAirport && fuel < 30.f && status != Status::DOCKED)
+        if (status == Status::FLYING && fuel < 30.f)
         {
-            hasClosestAirport = true;
             status = Status::EMERGENCY;
             return true;
         }
@@ -53,10 +52,9 @@ protected:
         target.draw(sprite,states);
     }
     sf::Sprite sprite;
-    Status status;
+    Status status{Status::FLYING};
     float fuel{100.f};
     float fuelToDepart{100.f};
     float refillSpeed{0.2f};
     float fuelUsage{util::ConfigLoader::get().fuelUsage};
-    bool hasClosestAirport{};
 };

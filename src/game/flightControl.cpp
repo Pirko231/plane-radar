@@ -5,10 +5,8 @@ FlightControl::FlightControl(sf::Vector2u mapSize, int startingPlanes, IAirportM
 {
     FlyableFactory factory;
     for (int i = 0; i < startingPlanes; i++)
-    {
         objects.push_back(factory.createPlane(airportManager.getRandomAirport(), &airportManager));
-        //airportManager.requestLanding(objects[i].get(), objects[i]->getTarget());
-    }
+    
 }
 
 void FlightControl::update(bool paused)
@@ -32,7 +30,6 @@ void FlightControl::update(bool paused)
     {
         FlyableFactory factory;
         objects.push_back(factory.createPlane(airportManager.getRandomAirport(), &airportManager));
-        //airportManager.requestLanding((objects.end() - 1)->operator->(), (objects.end() - 1)->operator->()->getTarget());
     }
     for (std::size_t i = 0; i < objects.size(); i++)
     {

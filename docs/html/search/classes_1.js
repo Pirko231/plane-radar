@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['defaultstatus_0',['DefaultStatus',['../structutil_1_1DefaultStatus.html',1,'util']]]
+  ['configloader_0',['ConfigLoader',['../classutil_1_1ConfigLoader.html',1,'util']]]
 ];

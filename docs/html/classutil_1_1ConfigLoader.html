@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Plane radar: IAirportManager Class Reference</title>
+<title>Plane radar: util::ConfigLoader Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,39 +67,40 @@ $(function() {
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceutil.html">util</a></li><li class="navelem"><a class="el" href="classutil_1_1ConfigLoader.html">ConfigLoader</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classIAirportManager-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">IAirportManager Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="classutil_1_1ConfigLoader-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">util::ConfigLoader Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for IAirportManager:</div>
-<div class="dyncontent">
-<div class="center"><img src="classIAirportManager__inherit__graph.png" border="0" usemap="#aIAirportManager_inherit__map" alt="Inheritance graph"/></div>
-<map name="aIAirportManager_inherit__map" id="aIAirportManager_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,5,132,31"/>
-<area shape="rect" href="classAirportManager.html" title=" " alt="" coords="7,79,130,104"/>
-<area shape="poly" title=" " alt="" coords="71,44,71,79,66,79,66,44"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a9d22a82a0814f59dabba8c1f620b69f5" id="r_a9d22a82a0814f59dabba8c1f620b69f5"><td class="memItemLeft" align="right" valign="top"><a id="a9d22a82a0814f59dabba8c1f620b69f5" name="a9d22a82a0814f59dabba8c1f620b69f5"></a>
-virtual <a class="el" href="classAirport.html">Airport</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getClosestAirport</b> (sf::Vector2f pos)=0</td></tr>
-<tr class="separator:a9d22a82a0814f59dabba8c1f620b69f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af10505e863387d641d6bb29cf2b719db" id="r_af10505e863387d641d6bb29cf2b719db"><td class="memItemLeft" align="right" valign="top"><a id="af10505e863387d641d6bb29cf2b719db" name="af10505e863387d641d6bb29cf2b719db"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>requestLanding</b> (<a class="el" href="classIFlyable.html">IFlyable</a> *, <a class="el" href="classIAirport.html">IAirport</a> *)=0</td></tr>
-<tr class="separator:af10505e863387d641d6bb29cf2b719db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b9be8fd9dc22b430335c7e2fbaec8b4" id="r_a5b9be8fd9dc22b430335c7e2fbaec8b4"><td class="memItemLeft" align="right" valign="top"><a id="a5b9be8fd9dc22b430335c7e2fbaec8b4" name="a5b9be8fd9dc22b430335c7e2fbaec8b4"></a>
-virtual <a class="el" href="classAirport.html">Airport</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getRandomAirport</b> ()=0</td></tr>
-<tr class="separator:a5b9be8fd9dc22b430335c7e2fbaec8b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a2621cdaff2d5a765561537e2daab6e17" id="r_a2621cdaff2d5a765561537e2daab6e17"><td class="memItemLeft" align="right" valign="top"><a id="a2621cdaff2d5a765561537e2daab6e17" name="a2621cdaff2d5a765561537e2daab6e17"></a>
+static <a class="el" href="classutil_1_1ConfigLoader.html">ConfigLoader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> ()</td></tr>
+<tr class="separator:a2621cdaff2d5a765561537e2daab6e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a629508302a7c758bb22a28560c835593" id="r_a629508302a7c758bb22a28560c835593"><td class="memItemLeft" align="right" valign="top"><a id="a629508302a7c758bb22a28560c835593" name="a629508302a7c758bb22a28560c835593"></a>
+sf::Vector2u&#160;</td><td class="memItemRight" valign="bottom"><b>mapSize</b> {2000u,2000u}</td></tr>
+<tr class="separator:a629508302a7c758bb22a28560c835593"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e2b5e370e50b73d6a07688a234ee093" id="r_a2e2b5e370e50b73d6a07688a234ee093"><td class="memItemLeft" align="right" valign="top"><a id="a2e2b5e370e50b73d6a07688a234ee093" name="a2e2b5e370e50b73d6a07688a234ee093"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>airportAmount</b> {8}</td></tr>
+<tr class="separator:a2e2b5e370e50b73d6a07688a234ee093"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12d82fe33d920ce00a41daaba6f26417" id="r_a12d82fe33d920ce00a41daaba6f26417"><td class="memItemLeft" align="right" valign="top"><a id="a12d82fe33d920ce00a41daaba6f26417" name="a12d82fe33d920ce00a41daaba6f26417"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>fuelUsage</b> {0.05f}</td></tr>
+<tr class="separator:a12d82fe33d920ce00a41daaba6f26417"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>game/interfaces/<a class="el" href="airportManagerInterface_8hpp_source.html">airportManagerInterface.hpp</a></li>
+<li>utils/<a class="el" href="configLoader_8hpp_source.html">configLoader.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

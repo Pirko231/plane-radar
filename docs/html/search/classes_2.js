@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['flightcontrol_0',['FlightControl',['../classFlightControl.html',1,'']]],
-  ['flyablefactory_1',['FlyableFactory',['../classFlyableFactory.html',1,'']]]
+  ['defaultstatus_0',['DefaultStatus',['../structutil_1_1DefaultStatus.html',1,'util']]]
 ];

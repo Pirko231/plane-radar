@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['map_0',['Map',['../classMap.html',1,'']]],
-  ['mousestatus_1',['MouseStatus',['../structutil_1_1MouseStatus.html',1,'util']]]
+  ['keystatus_0',['KeyStatus',['../structutil_1_1KeyStatus.html',1,'util']]]
 ];

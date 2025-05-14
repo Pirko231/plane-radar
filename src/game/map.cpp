@@ -8,6 +8,8 @@ Map::Map(sf::Vector2u _mapSize)
 : windowSize{_mapSize}, texture{windowSize}, sprite{texture}
 {
     generateMap(texture, {pixelsArr, windowSize.x * windowSize.y * 4}, (sf::Vector2i)_mapSize);
+    delete [] pixelsArr;
+    pixelsArr = nullptr;
 }
 
 Map::~Map()
@@ -33,34 +35,52 @@ sf::Color Map::getRandomTerrain() const
         return Tile::grass;
 }
 
-void Map::generateMap(sf::Texture &txt, std::span<std::uint8_t> data, sf::Vector2i mapSize)
+void Map::generateLakes(std::span<std::uint8_t> data, int lakesAmount, sf::Vector2i mapSize)
 {
-    auto [width, height] {mapSize};
-    int waterAmount{4};
-
-    // przyjmuje wskaznik do koloru i modyfikuje 4 kolejne elementy tablicy
-    auto setColor = [](std::uint8_t* where, sf::Color color)
+    int lakeSize{200};
+    for (int lakes = 0; lakes < lakesAmount; lakes++)
     {
-        *where = color.r;
-        *(where + 1) = color.g;
-        *(where + 2) = color.b;
-        *(where + 3) = color.a;
-    };
+        sf::Vector2i lakePos = static_cast<sf::Vector2i>(getRandomPoint());
+        for (std::size_t x = lakePos.x; x < (lakePos.x + lakeSize) * 4; x++)
+        {
+            for (std::size_t y = 0; y < lakeSize; y += 4)
+            {
+                std::size_t pos = x + y * mapSize.y;
+
+                auto color = Tile::water;
+            }
+        }
+    }
+}
+
+void Map::fillEmpty(std::span<std::uint8_t> data, sf::Vector2i mapSize)
+{
+    auto isEmpty = [](std::uint8_t* where){return sf::Color{*(where), *(where + 1), *(where + 2), *(where + 3)} != Tile::empty;};
+
 
     for (std::size_t i = 0; i < mapSize.y * 4; i++)
     {
         for (std::size_t j = 0; j < mapSize.x; j += 4)
         {
             std::size_t pos = j + i * mapSize.y;
-            sf::Color color = Tile::grass;
-            setColor(&data[pos], color);
+
+            auto color = getRandomTerrain();
+
+            if (isEmpty(&data[pos]))
+                setColor(&data[pos], color);
+
         }
     }
+}
 
-    
-    std::uniform_int_distribution<int> TerrainSize (0,9);
-    std::uniform_int_distribution<int> TerrainBalance (0,3);
+void Map::generateMap(sf::Texture &txt, std::span<std::uint8_t> data, sf::Vector2i mapSize)
+{
+    auto [width, height] {mapSize};
+    int waterAmount{4};
 
+    generateLakes(data, 20, mapSize);
+
+    //fillEmpty(data, mapSize);
 
     txt.update(data.data());
 }

@@ -37,10 +37,20 @@ private:
     
 
     sf::Color getRandomTerrain() const;
+    // przyjmuje wskaznik do koloru i modyfikuje 4 kolejne elementy tablicy
+    void setColor(std::uint8_t* where, sf::Color color)
+    {
+        *where = color.r;
+        *(where + 1) = color.g;
+        *(where + 2) = color.b;
+        *(where + 3) = color.a;
+    };
+    void generateLakes(std::span<std::uint8_t>, int, sf::Vector2i);
+    void fillEmpty(std::span<std::uint8_t>, sf::Vector2i);
     void generateMap(sf::Texture& texture, std::span<std::uint8_t>, sf::Vector2i mapSize);
     
     sf::Vector2u windowSize;
     sf::Texture texture;
     sf::Sprite sprite;
-    std::uint8_t* pixelsArr {new std::uint8_t[windowSize.x * windowSize.y * 4]};
+    std::uint8_t* pixelsArr {new std::uint8_t[windowSize.x * windowSize.y * 4] {}};
 };

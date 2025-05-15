@@ -37,7 +37,7 @@ sf::Color Map::getRandomTerrain() const
 
 void Map::generateLakes(std::span<std::uint8_t> data, int lakesAmount, sf::Vector2i mapSize)
 {
-    int lakeSize{200};
+    int lakeSize{200}; //od razu bierze pod uwage piksele
     for (int lakes = 0; lakes < lakesAmount; lakes++)
     {
         sf::Vector2i lakePos = static_cast<sf::Vector2i>(getRandomPoint());
@@ -47,7 +47,7 @@ void Map::generateLakes(std::span<std::uint8_t> data, int lakesAmount, sf::Vecto
             {
                 std::size_t pos = x + y * mapSize.y;
 
-                auto color = Tile::water;
+                setColor(&data[pos], Tile::water);
             }
         }
     }
